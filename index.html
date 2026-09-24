@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>গ্রাম বাংলার বাজার</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+}
+
+body{
+  background:#f8f5ed;
+  color:#333;
+}
+
+header{
+  background:#fff;
+  padding:18px 15px;
+  text-align:center;
+  border-bottom:1px solid #ddd;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#315b35;
+}
+
+.subtitle{
+  margin-top:5px;
+  color:#8a6b35;
+  font-size:14px;
+}
+
+.hero{
+  padding:55px 20px;
+  text-align:center;
+  background:linear-gradient(#315b35,#477247);
+  color:white;
+}
+
+.hero h1{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:17px;
+  line-height:1.7;
+  max-width:650px;
+  margin:auto;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:13px 25px;
+  background:#d9a441;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.products{
+  padding:45px 18px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.products h2{
+  text-align:center;
+  color:#315b35;
+  margin-bottom:30px;
+  font-size:28px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:12px;
+  padding:25px 18px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.icon{
+  font-size:55px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#315b35;
+  margin-bottom:10px;
+  font-size:21px;
+}
+
+.card p{
+  color:#666;
+  line-height:1.6;
+}
+
+.about{
+  background:#eee8d9;
+  padding:45px 20px;
+  text-align:center;
+}
+
+.about h2{
+  color:#315b35;
+  margin-bottom:15px;
+}
+
+.about p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.contact{
+  padding:40px 20px;
+  text-align:center;
+}
+
+.contact h2{
+  color:#315b35;
+  margin-bottom:15px;
+}
+
+footer{
+  background:#315b35;
+  color:white;
+  text-align:center;
+  padding:22px 15px;
+  margin-top:20px;
+}
+
+footer p{
+  margin:5px;
+  font-size:14px;
+}
+
+@media(max-width:500px){
+  .logo{font-size:25px;}
+  .hero h1{font-size:29px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🌾 গ্রাম বাংলার বাজার</div>
+  <div class="subtitle">গ্রামের স্বাদ, বিশ্বাসের সাথে</div>
+</header>
+
+<section class="hero">
+  <h1>গ্রাম বাংলার আসল স্বাদ</h1>
+  <p>
+    প্রকৃতির কাছ থেকে পাওয়া উপাদান দিয়ে তৈরি
+    আমাদের বিশেষ খাবার ও প্রাকৃতিক পণ্য।
+    গ্রাম থেকে আপনার ঘরে।
+  </p>
+  <a href="#products" class="btn">আমাদের পণ্য দেখুন</a>
+</section>
+
+<section class="products" id="products">
+  <h2>আমাদের পণ্য</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">☕</div>
+      <h3>খেজুরের গুড়ের কফি</h3>
+      <p>
+        খেজুরের বীজ ও প্রাকৃতিক উপাদানের
+        বিশেষ সমন্বয়ে তৈরি আমাদের নিজস্ব কফি।
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🍈</div>
+      <h3>কাঁঠালের চিপস</h3>
+      <p>
+        বাংলাদেশের সুস্বাদু কাঁঠাল থেকে
+        যত্নসহকারে তৈরি করা বিশেষ চিপস।
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🥭</div>
+      <h3>আমের চিপস</h3>
+      <p>
+        দেশি আমের স্বাদ ধরে রাখার
+        জন্য বিশেষভাবে প্রস্তুত করা হবে।
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+  <h2>আমাদের সম্পর্কে</h2>
+  <p>
+    গ্রাম বাংলার বাজার একটি দেশীয় উদ্যোগ।
+    বাংলাদেশের গ্রামের ঐতিহ্যবাহী খাবার ও
+    কৃষিজ পণ্যকে সুন্দরভাবে মানুষের কাছে
+    পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+  </p>
+</section>
+
+<section class="contact">
+  <h2>যোগাযোগ</h2>
+  <p>📍 পুঠিয়া, রাজশাহী, বাংলাদেশ</p>
+  <p>📱 যোগাযোগের তথ্য শীঘ্রই যুক্ত করা হবে</p>
+</section>
+
+<footer>
+  <p>© 2026 গ্রাম বাংলার বাজার</p>
+  <p>গ্রামের স্বাদ • প্রাকৃতিক যত্ন • বিশ্বাস</p>
+</footer>
+
+</body>
+</html>
