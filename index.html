@@ -82,7 +82,7 @@ header{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:20px;
 }
 
@@ -92,6 +92,9 @@ header{
   padding:25px 18px;
   text-align:center;
   box-shadow:0 3px 12px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .icon{
@@ -108,6 +111,17 @@ header{
 .card p{
   color:#666;
   line-height:1.6;
+  margin-bottom: 15px;
+}
+
+.price-tag {
+  background: #f0f7f1;
+  border: 1px dashed #315b35;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #315b35;
 }
 
 .about{
@@ -135,6 +149,17 @@ header{
 .contact h2{
   color:#315b35;
   margin-bottom:15px;
+}
+
+.contact p{
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.contact a{
+  color: #315b35;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 footer{
@@ -167,43 +192,59 @@ footer p{
 <section class="hero">
   <h1>গ্রাম বাংলার আসল স্বাদ</h1>
   <p>
-    .আসসালামু আলাইকুম আমাদের পেজে আপনাকে স্বাগতম 🥰প্রকৃতির কাছ থেকে পাওয়া উপাদান দিয়ে তৈরি
-    আমাদের বিশেষ খাবার ও প্রাকৃতিক পণ্য।
-    গ্রাম থেকে আপনার ঘরে।
+    আসসালামু আলাইকুম, আমাদের পেজে আপনাকে স্বাগতম 🥰 প্রকৃতির কাছ থেকে পাওয়া উপাদান দিয়ে তৈরি
+    আমাদের বিশেষ খাবার ও প্রাকৃতিক পণ্য। গ্রাম থেকে আপনার ঘরে।
   </p>
   <a href="#products" class="btn">আমাদের পণ্য দেখুন</a>
 </section>
 
 <section class="products" id="products">
-  <h2>আমাদের পণ্য</h2>
+  <h2>আমাদের পণ্যসমূহ</h2>
 
   <div class="grid">
 
+    <!-- খেজুরের বীজের কফি -->
     <div class="card">
-      <div class="icon">☕</div>
-      <h3>খেজুরের বিজের কফি</h3>
-      <p>
-        খেজুরের বীজ ও প্রাকৃতিক উপাদানের
-        বিশেষ সমন্বয়ে তৈরি আমাদের নিজস্ব কফি।
-      </p>
+      <div>
+        <div class="icon">☕</div>
+        <h3> খেজুরের বীজের কফি</h3>
+        <p>
+          খেজুরের বীজ (ভাজা ও গুঁড়া) এবং প্রাকৃতিক খেজুরের গুড়ের সমন্বয়ে তৈরি অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ ও ক্যাফেইন-মুক্ত স্বাস্থ্যকর কফি।
+        </p>
+      </div>
+      <div class="price-tag">
+        📦 ৭৫ গ্রাম — ৳ ১৫০ <br>
+        📦 ১৫০ গ্রাম — ৳ ২৮০
+      </div>
     </div>
 
+    <!-- কাঁঠালের চিপস -->
     <div class="card">
-      <div class="icon">🥑</div>
-      <h3>কাঁঠালের চিপস</h3>
-      <p>
-        বাংলাদেশের সুস্বাদু কাঁঠাল থেকে
-        যত্নসহকারে তৈরি করা বিশেষ চিপস।
-      </p>
+      <div>
+        <div class="icon">🥑</div>
+        <h3>কাঁঠালের চিপস</h3>
+        <p>
+          কোনো কৃত্রিম রং বা কেমিক্যাল ছাড়া, ১০০% প্রাকৃতিক উপায়ে পাকা ও সুস্বাদু কাঁঠাল থেকে তৈরি স্বাস্থ্যোপযোগী চিপস।
+        </p>
+      </div>
+      <div class="price-tag">
+        📦 ৭৫ গ্রাম — ৳ ১০০ <br>
+        📦 ১৫০ গ্রাম — ৳ ১৯০
+      </div>
     </div>
 
+    <!-- আমের চিপস -->
     <div class="card">
-      <div class="icon">🥭</div>
-      <h3>আমের চিপস</h3>
-      <p>
-        দেশি আমের স্বাদ ধরে রাখার
-        জন্য বিশেষভাবে প্রস্তুত করা হয়।
-      </p>
+      <div>
+        <div class="icon">🥭</div>
+        <h3>আমের চিপস</h3>
+        <p>
+          দেশি পাকা আমের প্রাকৃতিক পুষ্টি ও খাঁটি স্বাদ ধরে রাখতে বিশেষভাবে প্রস্তুতকৃত মচমচে চিপস।
+        </p>
+      </div>
+      <div class="price-tag">
+        পরিমাণ ও মূল্য শীঘ্রই আসছে...
+      </div>
     </div>
 
   </div>
@@ -212,21 +253,21 @@ footer p{
 <section class="about">
   <h2>আমাদের সম্পর্কে</h2>
   <p>
-    গ্রাম বাংলার বাজার একটি দেশীয় উদ্যোগ।
-    বাংলাদেশের গ্রামের ঐতিহ্যবাহী খাবার ও
-    কৃষিজ পণ্যকে সুন্দরভাবে মানুষের কাছে
-    পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+    <strong>গ্রাম বাংলার বাজার</strong> একটি দেশীয় উদ্যোগ[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span)[span_21](start_span)[span_21](end_span)[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span)। 
+    প্রস্তুতকারক <strong>মো: আরিফুল ইসলাম</strong>-এর তত্ত্বাবধানে বাংলাদেশের গ্রামীণ ঐতিহ্যবাহী খাবার ও কৃষিজ পণ্যকে ১০০% প্রাকৃতিক ও খাঁটি উপায়ে মানুষের কাছে পৌঁছে দেওয়াই আমাদের প্রধান লক্ষ্য[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span)[span_26](start_span)[span_26](end_span)[span_27](start_span)[span_27](end_span)[span_28](start_span)[span_28](end_span)[span_29](start_span)[span_29](end_span)[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span)।
   </p>
 </section>
 
 <section class="contact">
-  <h2>যোগাযোগ</h2>
-  <p>📍 পুঠিয়া, রাজশাহী, বাংলাদেশ</p>
-  <p>📱 যোগাযোগের তথ্য শীঘ্রই যুক্ত করা হবে</p>
+  <h2>যোগাযোগ করুন</h2>
+  <p>📍 <strong>ঠিকানা:</strong> পুঠিয়া, রাজশাহী, বাংলাদেশ</p>[span_32](start_span)[span_32](end_span)[span_33](start_span)[span_33](end_span)[span_34](start_span)[span_34](end_span)[span_35](start_span)[span_35](end_span)[span_36](start_span)[span_36](end_span)[span_37](start_span)[span_37](end_span)[span_38](start_span)[span_38](end_span)[span_39](start_span)[span_39](end_span)
+  <p>📱 <strong>হোয়াটসঅ্যাপ / ফোন:</strong> <a href="https://wa.me/8801309176474">+8801309176474</a></p>[span_40](start_span)[span_40](end_span)[span_41](start_span)[span_41](end_span)[span_42](start_span)[span_42](end_span)[span_43](start_span)[span_43](end_span)[span_44](start_span)[span_44](end_span)[span_45](start_span)[span_45](end_span)
+  <p>🌐 <strong>ওয়েবসাইট:</strong> <a href="https://grambanglarbazar.github.io" target="_blank">grambanglarbazar.github.io</a></p>[span_46](start_span)[span_46](end_span)[span_47](start_span)[span_47](end_span)[span_48](start_span)[span_48](end_span)[span_49](start_span)[span_49](end_span)[span_50](start_span)[span_50](end_span)[span_51](start_span)[span_51](end_span)[span_52](start_span)[span_52](end_span)[span_53](start_span)[span_53](end_span)
+  <p>Facebook <strong>ফেসবুক পেজ:</strong> <a href="https://www.facebook.com/share/1ESbvX3UQo/" target="_blank">গ্রাম বাংলার বাজার</a></p>[span_54](start_span)[span_54](end_span)[span_55](start_span)[span_55](end_span)[span_56](start_span)[span_56](end_span)[span_57](start_span)[span_57](end_span)[span_58](start_span)[span_58](end_span)[span_59](start_span)[span_59](end_span)[span_60](start_span)[span_60](end_span)[span_61](start_span)[span_61](end_span)
 </section>
 
 <footer>
-  <p>© 2026 গ্রাম বাংলার বাজার</p>
+  <p>© 2026 গ্রাম বাংলার বাজার। সর্বস্বত্ব সংরক্ষিত।</p>
   <p>গ্রামের স্বাদ • প্রাকৃতিক যত্ন • বিশ্বাস</p>
 </footer>
 
