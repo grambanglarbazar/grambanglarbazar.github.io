@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>গ্রাম বাংলার বাজার</title>
 
 <style>
@@ -13,52 +14,59 @@
   font-family:Arial,"Noto Sans Bengali",sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:#f8f5ed;
   color:#333;
+  line-height:1.6;
 }
 
+/* HEADER */
 header{
   background:#fff;
-  padding:18px 15px;
+  padding:16px 15px;
   text-align:center;
   border-bottom:1px solid #ddd;
 }
 
 .logo{
-  font-size:30px;
+  font-size:29px;
   font-weight:bold;
   color:#315b35;
 }
 
 .subtitle{
-  margin-top:5px;
+  margin-top:4px;
   color:#8a6b35;
   font-size:14px;
 }
 
+/* HERO */
 .hero{
   padding:55px 20px;
   text-align:center;
-  background:linear-gradient(#315b35,#477247);
+  background:linear-gradient(135deg,#315b35,#527c50);
   color:white;
 }
 
 .hero h1{
   font-size:36px;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 
 .hero p{
   font-size:17px;
-  line-height:1.7;
-  max-width:650px;
+  line-height:1.8;
+  max-width:700px;
   margin:auto;
 }
 
 .btn{
   display:inline-block;
-  margin-top:25px;
+  margin-top:24px;
   padding:13px 25px;
   background:#d9a441;
   color:white;
@@ -67,6 +75,7 @@ header{
   font-weight:bold;
 }
 
+/* PRODUCTS */
 .products{
   padding:45px 18px;
   max-width:1100px;
@@ -80,73 +89,175 @@ header{
   font-size:28px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-}
-
-.card{
+.product-box{
   background:white;
-  border-radius:12px;
-  padding:18px;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:30px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.product-title{
   text-align:center;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.product-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.card h3{
   color:#315b35;
-  margin-bottom:10px;
-  font-size:21px;
+  font-size:25px;
+  margin-bottom:8px;
 }
 
-.card p{
+.product-description{
+  text-align:center;
   color:#666;
-  line-height:1.6;
-  margin-bottom: 15px;
-  font-size: 14px;
+  max-width:700px;
+  margin:0 auto 20px;
 }
 
-.price-tag {
-  background: #f0f7f1;
-  border: 1px dashed #315b35;
-  border-radius: 8px;
-  padding: 10px;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #315b35;
+/* IMAGE GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:20px;
 }
 
-.order-btn {
-  display: block;
-  margin-top: 12px;
-  padding: 10px;
-  background-color: #25D366;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: 0.3s;
+.gallery-item{
+  background:#f7f7f7;
+  border-radius:10px;
+  padding:7px;
+  border:1px solid #eee;
 }
 
-.order-btn:hover {
-  background-color: #1eb956;
+.gallery-item img{
+  width:100%;
+  height:210px;
+  object-fit:contain;
+  display:block;
+  border-radius:7px;
 }
 
-.about{
+.gallery-label{
+  text-align:center;
+  font-size:13px;
+  color:#555;
+  margin-top:5px;
+}
+
+/* PRICE */
+.price-box{
+  background:#f0f7f1;
+  border:1px dashed #315b35;
+  border-radius:9px;
+  padding:12px;
+  text-align:center;
+  color:#315b35;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.order-btn{
+  display:block;
+  width:100%;
+  padding:13px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  font-weight:bold;
+  border-radius:7px;
+  border:0;
+  cursor:pointer;
+  font-size:16px;
+}
+
+/* ORDER SECTION */
+.order-section{
   background:#eee8d9;
+  padding:45px 18px;
+}
+
+.order-container{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.order-container h2{
+  text-align:center;
+  color:#315b35;
+  margin-bottom:8px;
+}
+
+.order-note{
+  text-align:center;
+  color:#666;
+  font-size:14px;
+  margin-bottom:22px;
+}
+
+.form-group{
+  margin-bottom:16px;
+}
+
+.form-group label{
+  display:block;
+  font-weight:bold;
+  color:#315b35;
+  margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:7px;
+  font-size:15px;
+  outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:#315b35;
+}
+
+.form-group textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.order-submit{
+  width:100%;
+  padding:14px;
+  background:#315b35;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.order-submit:hover{
+  background:#24482a;
+}
+
+.cod{
+  margin-top:15px;
+  padding:12px;
+  background:#f8f5ed;
+  border-radius:8px;
+  text-align:center;
+  color:#315b35;
+  font-weight:bold;
+}
+
+/* ABOUT */
+.about{
+  background:#fff;
   padding:45px 20px;
   text-align:center;
 }
@@ -157,11 +268,12 @@ header{
 }
 
 .about p{
-  max-width:700px;
+  max-width:750px;
   margin:auto;
-  line-height:1.8;
+  line-height:1.9;
 }
 
+/* CONTACT */
 .contact{
   padding:40px 20px;
   text-align:center;
@@ -173,22 +285,22 @@ header{
 }
 
 .contact p{
-  margin: 8px 0;
-  font-size: 16px;
+  margin:8px 0;
+  font-size:16px;
 }
 
 .contact a{
-  color: #315b35;
-  text-decoration: none;
-  font-weight: bold;
+  color:#315b35;
+  text-decoration:none;
+  font-weight:bold;
 }
 
+/* FOOTER */
 footer{
   background:#315b35;
   color:white;
   text-align:center;
   padding:22px 15px;
-  margin-top:20px;
 }
 
 footer p{
@@ -196,195 +308,587 @@ footer p{
   font-size:14px;
 }
 
-@media(max-width:500px){
-  .logo{font-size:25px;}
-  .hero h1{font-size:29px;}
+/* MOBILE */
+@media(max-width:750px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-item img{
+    height:180px;
+  }
+}
+
+@media(max-width:450px){
+
+  .logo{
+    font-size:24px;
+  }
+
+  .hero{
+    padding:42px 17px;
+  }
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .gallery-item img{
+    height:155px;
+  }
+
+  .product-title{
+    font-size:22px;
+  }
+
+  .order-container{
+    padding:18px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
+
+  <!-- পরে এখানে কোম্পানির আসল লোগোর ছবি বসানো যাবে -->
   <div class="logo">🌾 গ্রাম বাংলার বাজার</div>
-  <div class="subtitle">দেশের মাটি থেকে, আপনার ঘরে</div>
+
+  <div class="subtitle">
+    দেশের মাটি থেকে, আপনার ঘরে
+  </div>
+
 </header>
 
+
+<!-- HERO -->
 <section class="hero">
+
   <h1>গ্রাম বাংলার আসল স্বাদ</h1>
+
   <p>
-    আসসালামু আলাইকুম, আমাদের পেজে আপনাকে স্বাগতম 🥰 প্রকৃতির কাছ থেকে পাওয়া উপাদান দিয়ে তৈরি
-    আমাদের বিশেষ খাবার ও প্রাকৃতিক পণ্য। গ্রাম থেকে আপনার ঘরে।
+    আসসালামু আলাইকুম, আমাদের পেজে আপনাকে স্বাগতম 🥰
+    বাংলাদেশের গ্রামীণ ঐতিহ্য ও প্রাকৃতিক উপাদানের
+    স্বাদ পৌঁছে দিতে আমাদের এই ছোট্ট উদ্যোগ।
   </p>
-  <a href="#products" class="btn">আমাদের পণ্য দেখুন</a>
+
+  <a href="#products" class="btn">
+    আমাদের পণ্য দেখুন
+  </a>
+
 </section>
 
+
+<!-- PRODUCTS -->
 <section class="products" id="products">
+
   <h2>আমাদের পণ্যসমূহ</h2>
 
-  <div class="grid">
 
-    <!-- ১. খেজুরের বীজের কফি -->
-    <div class="card">
-      <div>
-        <img src="179105205366f.jpg" alt=" খেজুরের বীজের কফি" class="product-img">
-        <h3> খেজুরের বীজের কফি</h3>
-        <p>
-           খেজুরের বীজ (ভাজা ও গুঁড়া) এবং প্রাকৃতিক খেজুরের গুড়ের সমন্বয়ে তৈরি অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ ও ক্যাফেইন-মুক্ত স্বাস্থ্যকর কফি।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          📦 ৭৫ গ্রাম — ৳ ১৫০ <br>
-          📦 ১৫০ গ্রাম — ৳ ২৮০
+  <!-- =========================
+       PRODUCT 1
+       খেজুরের বীজের কফি
+  ========================== -->
+
+  <div class="product-box">
+
+    <h3 class="product-title">
+      খেজুরের বীজের কফি
+    </h3>
+
+    <p class="product-description">
+      ভাজা ও গুঁড়া করা খেজুরের বীজ দিয়ে
+      প্রস্তুত করা ক্যাফেইন-মুক্ত পানীয়।
+    </p>
+
+
+    <div class="gallery">
+
+      <!-- ৭৫ গ্রাম সামনে -->
+      <div class="gallery-item">
+        <img src="1791052053666.jpg"
+             alt="খেজুরের বীজের কফি ৭৫ গ্রাম সামনে">
+        <div class="gallery-label">
+          ৭৫ গ্রাম • সামনে
         </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20খেজুরের%20বীজের%20কফি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
       </div>
+
+      <!-- ৭৫ গ্রাম পিছনে -->
+      <div class="gallery-item">
+        <img src="179105205366f.jpg"
+             alt="খেজুরের বীজের কফি ৭৫ গ্রাম পিছনে">
+        <div class="gallery-label">
+          ৭৫ গ্রাম • পেছনে
+        </div>
+      </div>
+
+      <!-- ১৫০ গ্রাম সামনে -->
+      <div class="gallery-item">
+        <img src="1791052245200.jpg"
+             alt="খেজুরের বীজের কফি ১৫০ গ্রাম সামনে">
+        <div class="gallery-label">
+          ১৫০ গ্রাম • সামনে
+        </div>
+      </div>
+
+      <!-- ১৫০ গ্রাম পিছনে -->
+      <div class="gallery-item">
+        <img src="file_000000001d248211a4149d279b145942.png"
+             alt="খেজুরের বীজের কফি ১৫০ গ্রাম পেছনে">
+        <div class="gallery-label">
+          ১৫০ গ্রাম • পেছনে
+        </div>
+      </div>
+
     </div>
 
-    <!-- ২. কাঁঠালের চিপস -->
-    <div class="card">
-      <div>
-        <img src="1791052245200.jpg" alt="কাঁঠালের চিপস" class="product-img">
-        <h3>কাঁঠালের চিপস</h3>
-        <p>
-          কোনো কৃত্রিম রং বা কেমিক্যাল ছাড়া, ১০০% প্রাকৃতিক উপায়ে পাকা ও সুস্বাদু কাঁঠাল থেকে তৈরি স্বাস্থ্যোপযোগী চিপস।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          📦 ৭৫ গ্রাম — ৳ ১০০ <br>
-          📦 ১৫০ গ্রাম — ৳ ১৯০
-        </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20কাঁঠালের%20চিপস%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
-      </div>
-    </div>
 
-    <!-- ৩. আমের চিপস -->
-    <div class="card">
-      <div>
-        <img src="file_000000001d248211a4149d.jpg" alt="আমের চিপস" class="product-img">
-        <h3>আমের চিপস</h3>
-        <p>
-          দেশি পাকা আমের প্রাকৃতিক পুষ্টি ও খাঁটি স্বাদ ধরে রাখতে বিশেষভাবে প্রস্তুতকৃত মচমচে চিপস।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          পরিমাণ ও মূল্য শীঘ্রই আসছে...
-        </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20আমের%20চিপস%20সম্পর্কে%20জানতে%20চাই" class="order-btn" target="_blank">অর্ডার/জানতে চান (WhatsApp)</a>
-      </div>
-    </div>
-
-    <!-- ৪. বিশেষ পণ্য ৪ -->
-    <div class="card">
-      <div>
-        <img src="file_0000000022248211a7e100.jpg" alt="গ্রাম বাংলার পণ্য" class="product-img">
-        <h3>খাঁটি দেশীয় পণ্য</h3>
-        <p>
-          প্রাকৃতিক উপায়ে উৎপাদিত সম্পূর্ণ ভেজালমুক্ত ও সুস্বাদু গ্রামীণ খাবার।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          অর্ডার করতে যোগাযোগ করুন
-        </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
-      </div>
-    </div>
-
-    <!-- ৫. বিশেষ পণ্য ৫ -->
-    <div class="card">
-      <div>
-        <img src="file_0000000035348208924820.jpg" alt="প্রাকৃতিক খাদ্য" class="product-img">
-        <h3>প্রাকৃতিক স্বাস্থ্যকর খাদ্য</h3>
-        <p>
-          স্বাস্থ্য সুরক্ষায় ১০০% খাঁটি উপাদান দিয়ে তৈরি বিশেষ গ্রামীণ খাদ্যপণ্য।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          অর্ডার করতে যোগাযোগ করুন
-        </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
-      </div>
-    </div>
-
-    <!-- ৬. বিশেষ পণ্য ৬ -->
-    <div class="card">
-      <div>
-        <img src="file_0000000067108211872a20.jpg" alt="গ্রামের ঐতিহ্যবাহী খাবার" class="product-img">
-        <h3>ঐতিহ্যবাহী খাবার</h3>
-        <p>
-          গ্রামের মা-বোনের হাতে তৈরি আসল স্বাদের ঘরোয়া প্রাকৃতিক খাবার।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          অর্ডার করতে যোগাযোগ করুন
-        </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
-      </div>
-    </div>
-
-    <!-- ৭. বিশেষ পণ্য ৭ -->
-    <div class="card">
-      <div>
-        <img src="file_00000000c8a82088a876ba.jpg" alt="খাঁটি গ্রামীণ পণ্য" class="product-img">
-        <h3>বিশেষ উপহার প্যাক</h3>
-        <p>
-          আপনার প্রিয়জনের স্বাস্থ্য সুরক্ষায় আমাদের বিশেষ অর্গানিক গিফট প্যাক।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          অর্ডার করতে যোগাযোগ করুন
-        </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
-      </div>
-    </div>
-
-    <!-- ৮. বিশেষ পণ্য ৮ -->
-    <div class="card">
-      <div>
-        <img src="file_00000000d00820a973e9be.jpg" alt="অর্গানিক খাবার" class="product-img">
-        <h3>অর্গানিক খাদ্য সামগ্রী</h3>
-        <p>
-          প্রকৃতির সেরা সতেজতা ও গুণমান বজায় রেখে প্রস্তুতকৃত আসল খাদ্য।
-        </p>
-      </div>
-      <div>
-        <div class="price-tag">
-          অর্ডার করতে যোগাযোগ করুন
-        </div>
-        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
-      </div>
+    <div class="price-box">
+      📦 ৭৫ গ্রাম — ৳ ১৫০
+      <br>
+      📦 ১৫০ গ্রাম — ৳ ২৮০
     </div>
 
   </div>
+
+
+
+  <!-- =========================
+       PRODUCT 2
+       কাঁঠালের চিপস
+  ========================== -->
+
+  <div class="product-box">
+
+    <h3 class="product-title">
+      কাঁঠালের চিপস
+    </h3>
+
+    <p class="product-description">
+      পাকা কাঁঠাল থেকে তৈরি সুস্বাদু চিপস।
+      কৃত্রিম রং বা অতিরিক্ত রাসায়নিক ব্যবহার না করে
+      মেশিনে শুকিয়ে প্রস্তুত করা হয়।
+    </p>
+
+
+    <div class="gallery">
+
+      <!-- ৭৫ গ্রাম সামনে -->
+      <div class="gallery-item">
+        <img src="file_0000000022248211a7e10049a1b91e95.png"
+             alt="কাঁঠালের চিপস ৭৫ গ্রাম সামনে">
+        <div class="gallery-label">
+          ৭৫ গ্রাম • সামনে
+        </div>
+      </div>
+
+      <!-- ৭৫ গ্রাম পিছনে -->
+      <div class="gallery-item">
+        <img src="file_000000003534820892482020ef93e8a2.png"
+             alt="কাঁঠালের চিপস ৭৫ গ্রাম পেছনে">
+        <div class="gallery-label">
+          ৭৫ গ্রাম • পেছনে
+        </div>
+      </div>
+
+      <!-- ১৫০ গ্রাম সামনে -->
+      <div class="gallery-item">
+        <img src="file_0000000067108211872a205a6f548e4c.png"
+             alt="কাঁঠালের চিপস ১৫০ গ্রাম সামনে">
+        <div class="gallery-label">
+          ১৫০ গ্রাম • সামনে
+        </div>
+      </div>
+
+      <!-- ১৫০ গ্রাম পিছনে -->
+      <div class="gallery-item">
+        <img src="file_00000000c8a882088a876baf937c8c94.png"
+             alt="কাঁঠালের চিপস ১৫০ গ্রাম পেছনে">
+        <div class="gallery-label">
+          ১৫০ গ্রাম • পেছনে
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="price-box">
+      📦 ৭৫ গ্রাম — ৳ ১০০
+      <br>
+      📦 ১৫০ গ্রাম — ৳ ১৯০
+    </div>
+
+  </div>
+
 </section>
 
+
+
+<!-- =========================
+     ORDER FORM
+========================== -->
+
+<section class="order-section" id="order">
+
+  <div class="order-container">
+
+    <h2>🛒 অর্ডার করুন</h2>
+
+    <p class="order-note">
+      নিচের তথ্যগুলো পূরণ করে অর্ডার নিশ্চিত করুন।
+    </p>
+
+
+    <form id="orderForm">
+
+      <!-- নাম -->
+      <div class="form-group">
+        <label for="name">আপনার নাম *</label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="আপনার পূর্ণ নাম"
+          required>
+      </div>
+
+
+      <!-- মোবাইল -->
+      <div class="form-group">
+        <label for="phone">মোবাইল নম্বর *</label>
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="01XXXXXXXXX"
+          required>
+      </div>
+
+
+      <!-- গ্রাম/মহল্লা -->
+      <div class="form-group">
+        <label for="village">গ্রাম / মহল্লা *</label>
+
+        <input
+          type="text"
+          id="village"
+          placeholder="গ্রাম বা মহল্লার নাম"
+          required>
+      </div>
+
+
+      <!-- ডাকঘর -->
+      <div class="form-group">
+        <label for="post">ডাকঘর *</label>
+
+        <input
+          type="text"
+          id="post"
+          placeholder="ডাকঘরের নাম"
+          required>
+      </div>
+
+
+      <!-- উপজেলা -->
+      <div class="form-group">
+        <label for="upazila">উপজেলা *</label>
+
+        <input
+          type="text"
+          id="upazila"
+          placeholder="উপজেলার নাম"
+          required>
+      </div>
+
+
+      <!-- জেলা -->
+      <div class="form-group">
+        <label for="district">জেলা *</label>
+
+        <input
+          type="text"
+          id="district"
+          placeholder="জেলার নাম"
+          required>
+      </div>
+
+
+      <!-- পণ্য -->
+      <div class="form-group">
+
+        <label for="product">
+          পণ্য নির্বাচন করুন *
+        </label>
+
+        <select id="product" required>
+
+          <option value="">
+            -- পণ্য নির্বাচন করুন --
+          </option>
+
+          <option value="খেজুরের বীজের কফি - ৭৫ গ্রাম - ১৫০ টাকা">
+            খেজুরের বীজের কফি • ৭৫ গ্রাম • ৳১৫০
+          </option>
+
+          <option value="খেজুরের বীজের কফি - ১৫০ গ্রাম - ২৮০ টাকা">
+            খেজুরের বীজের কফি • ১৫০ গ্রাম • ৳২৮০
+          </option>
+
+          <option value="কাঁঠালের চিপস - ৭৫ গ্রাম - ১০০ টাকা">
+            কাঁঠালের চিপস • ৭৫ গ্রাম • ৳১০০
+          </option>
+
+          <option value="কাঁঠালের চিপস - ১৫০ গ্রাম - ১৯০ টাকা">
+            কাঁঠালের চিপস • ১৫০ গ্রাম • ৳১৯০
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- পরিমাণ -->
+      <div class="form-group">
+
+        <label for="quantity">
+          পরিমাণ *
+        </label>
+
+        <input
+          type="number"
+          id="quantity"
+          min="1"
+          value="1"
+          required>
+
+      </div>
+
+
+      <!-- ডেলিভারি -->
+      <div class="form-group">
+
+        <label for="delivery">
+          ডেলিভারি পদ্ধতি *
+        </label>
+
+        <select id="delivery" required>
+
+          <option value="হোম ডেলিভারি">
+            হোম ডেলিভারি
+          </option>
+
+          <option value="কুরিয়ার">
+            কুরিয়ার
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- বিশেষ নির্দেশনা -->
+      <div class="form-group">
+
+        <label for="note">
+          বিশেষ নির্দেশনা (ঐচ্ছিক)
+        </label>
+
+        <textarea
+          id="note"
+          placeholder="কোনো বিশেষ কথা থাকলে লিখুন..."></textarea>
+
+      </div>
+
+
+      <!-- COD -->
+      <div class="cod">
+        💵 পেমেন্ট পদ্ধতি: Cash on Delivery (COD)
+      </div>
+
+      <br>
+
+
+      <!-- SUBMIT -->
+      <button
+        type="submit"
+        class="order-submit">
+
+        📲 WhatsApp-এ অর্ডার নিশ্চিত করুন
+
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
 <section class="about">
+
   <h2>আমাদের সম্পর্কে</h2>
+
   <p>
-    <strong>গ্রাম বাংলার বাজার</strong> একটি দেশীয় উদ্যোগ। 
-    প্রস্তুতকারক <strong>মো: আরিফুল ইসলাম</strong>-এর তত্ত্বাবধানে বাংলাদেশের গ্রামীণ ঐতিহ্যবাহী খাবার ও কৃষিজ পণ্যকে ১০০% প্রাকৃতিক ও খাঁটি উপায়ে মানুষের কাছে পৌঁছে দেওয়াই আমাদের প্রধান লক্ষ্য।
+    <strong>গ্রাম বাংলার বাজার</strong> একটি দেশীয় উদ্যোগ।
+    বাংলাদেশের গ্রামীণ ঐতিহ্য ও দেশীয় খাবারের স্বাদ
+    মানুষের কাছে পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+    <br><br>
+    প্রস্তুতকারক:
+    <strong>মো আরিফুল ইসলাম</strong>
   </p>
+
 </section>
 
+
+
+<!-- CONTACT -->
 <section class="contact">
+
   <h2>যোগাযোগ করুন</h2>
-  <p>📍 <strong>ঠিকানা:</strong> পুঠিয়া, রাজশাহী, বাংলাদেশ</p>
-  <p>📱 <strong>হোয়াটসঅ্যাপ / ফোন:</strong> <a href="https://wa.me/8801309176474">+8801309176474</a></p>
-  <p>🌐 <strong>ওয়েবসাইট:</strong> <a href="https://grambanglarbazar.github.io" target="_blank">grambanglarbazar.github.io</a></p>
-  <p>Facebook <strong>ফেসবুক পেজ:</strong> <a href="https://www.facebook.com/share/1ESbvX3UQo/" target="_blank">গ্রাম বাংলার বাজার</a></p>
+
+  <p>
+    📍 <strong>ঠিকানা:</strong>
+    পুঠিয়া, রাজশাহী, বাংলাদেশ
+  </p>
+
+  <p>
+    📱 <strong>WhatsApp / ফোন:</strong>
+    <a href="https://wa.me/8801309176474">
+      +8801309176474
+    </a>
+  </p>
+
+  <p>
+    🌐 <strong>ওয়েবসাইট:</strong>
+    <a href="https://grambanglarbazar.github.io"
+       target="_blank">
+      grambanglarbazar.github.io
+    </a>
+  </p>
+
+  <p>
+    <strong>Facebook পেজ:</strong>
+    <a href="https://www.facebook.com/share/1ESbvX3UQo/"
+       target="_blank">
+      গ্রাম বাংলার বাজার
+    </a>
+  </p>
+
 </section>
 
+
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 গ্রাম বাংলার বাজার। সর্বস্বত্ব সংরক্ষিত।</p>
-  <p>গ্রামের স্বাদ • প্রাকৃতিক যত্ন • বিশ্বাস</p>
+
+  <p>
+    © 2026 গ্রাম বাংলার বাজার। সর্বস্বত্ব সংরক্ষিত।
+  </p>
+
+  <p>
+    গ্রামের স্বাদ • প্রাকৃতিক যত্ন • বিশ্বাস
+  </p>
+
 </footer>
+
+
+
+<!-- =========================
+     WHATSAPP ORDER SYSTEM
+========================== -->
+
+<script>
+
+document.getElementById("orderForm").addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById("name").value;
+
+  const phone =
+    document.getElementById("phone").value;
+
+  const village =
+    document.getElementById("village").value;
+
+  const post =
+    document.getElementById("post").value;
+
+  const upazila =
+    document.getElementById("upazila").value;
+
+  const district =
+    document.getElementById("district").value;
+
+  const product =
+    document.getElementById("product").value;
+
+  const quantity =
+    document.getElementById("quantity").value;
+
+  const delivery =
+    document.getElementById("delivery").value;
+
+  const note =
+    document.getElementById("note").value;
+
+
+  const message =
+
+`🛒 গ্রাম বাংলার বাজার - নতুন অর্ডার
+
+👤 নাম: ${name}
+
+📱 মোবাইল: ${phone}
+
+📍 ঠিকানা:
+গ্রাম/মহল্লা: ${village}
+ডাকঘর: ${post}
+উপজেলা: ${upazila}
+জেলা: ${district}
+
+📦 পণ্য: ${product}
+
+🔢 পরিমাণ: ${quantity}
+
+🚚 ডেলিভারি: ${delivery}
+
+💵 পেমেন্ট: Cash on Delivery (COD)
+
+📝 বিশেষ নির্দেশনা:
+${note || "কোনো নির্দেশনা নেই"}`;
+
+
+  const whatsappNumber = "8801309176474";
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(whatsappURL, "_blank");
+
+});
+
+</script>
+
 
 </body>
 </html>
