@@ -69,7 +69,7 @@ header{
 
 .products{
   padding:45px 18px;
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
 }
 
@@ -89,17 +89,21 @@ header{
 .card{
   background:white;
   border-radius:12px;
-  padding:25px 18px;
+  padding:18px;
   text-align:center;
   box-shadow:0 3px 12px rgba(0,0,0,.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
-.icon{
-  font-size:55px;
-  margin-bottom:15px;
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .card h3{
@@ -112,6 +116,7 @@ header{
   color:#666;
   line-height:1.6;
   margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .price-tag {
@@ -122,6 +127,22 @@ header{
   margin-top: 10px;
   font-weight: bold;
   color: #315b35;
+}
+
+.order-btn {
+  display: block;
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background-color: #1eb956;
 }
 
 .about{
@@ -203,47 +224,141 @@ footer p{
 
   <div class="grid">
 
-    <!-- খেজুরের বীজের কফি -->
+    <!-- ১. খেজুরের বীজের কফি -->
     <div class="card">
       <div>
-        <div class="icon">☕</div>
+        <img src="179105205366f.jpg" alt=" খেজুরের বীজের কফি" class="product-img">
         <h3> খেজুরের বীজের কফি</h3>
         <p>
-          খেজুরের বীজ (ভাজা ও গুঁড়া) এবং প্রাকৃতিক খেজুরের গুড়ের সমন্বয়ে তৈরি অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ ও ক্যাফেইন-মুক্ত স্বাস্থ্যকর কফি।
+           খেজুরের বীজ (ভাজা ও গুঁড়া) এবং প্রাকৃতিক খেজুরের গুড়ের সমন্বয়ে তৈরি অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ ও ক্যাফেইন-মুক্ত স্বাস্থ্যকর কফি।
         </p>
       </div>
-      <div class="price-tag">
-        📦 ৭৫ গ্রাম — ৳ ১৫০ <br>
-        📦 ১৫০ গ্রাম — ৳ ২৮০
+      <div>
+        <div class="price-tag">
+          📦 ৭৫ গ্রাম — ৳ ১৫০ <br>
+          📦 ১৫০ গ্রাম — ৳ ২৮০
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20খেজুরের%20বীজের%20কফি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
       </div>
     </div>
 
-    <!-- কাঁঠালের চিপস -->
+    <!-- ২. কাঁঠালের চিপস -->
     <div class="card">
       <div>
-        <div class="icon">🥑</div>
+        <img src="1791052245200.jpg" alt="কাঁঠালের চিপস" class="product-img">
         <h3>কাঁঠালের চিপস</h3>
         <p>
           কোনো কৃত্রিম রং বা কেমিক্যাল ছাড়া, ১০০% প্রাকৃতিক উপায়ে পাকা ও সুস্বাদু কাঁঠাল থেকে তৈরি স্বাস্থ্যোপযোগী চিপস।
         </p>
       </div>
-      <div class="price-tag">
-        📦 ৭৫ গ্রাম — ৳ ১০০ <br>
-        📦 ১৫০ গ্রাম — ৳ ১৯০
+      <div>
+        <div class="price-tag">
+          📦 ৭৫ গ্রাম — ৳ ১০০ <br>
+          📦 ১৫০ গ্রাম — ৳ ১৯০
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20কাঁঠালের%20চিপস%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
       </div>
     </div>
 
-    <!-- আমের চিপস -->
+    <!-- ৩. আমের চিপস -->
     <div class="card">
       <div>
-        <div class="icon">🥭</div>
+        <img src="file_000000001d248211a4149d.jpg" alt="আমের চিপস" class="product-img">
         <h3>আমের চিপস</h3>
         <p>
           দেশি পাকা আমের প্রাকৃতিক পুষ্টি ও খাঁটি স্বাদ ধরে রাখতে বিশেষভাবে প্রস্তুতকৃত মচমচে চিপস।
         </p>
       </div>
-      <div class="price-tag">
-        পরিমাণ ও মূল্য শীঘ্রই আসছে...
+      <div>
+        <div class="price-tag">
+          পরিমাণ ও মূল্য শীঘ্রই আসছে...
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20আমের%20চিপস%20সম্পর্কে%20জানতে%20চাই" class="order-btn" target="_blank">অর্ডার/জানতে চান (WhatsApp)</a>
+      </div>
+    </div>
+
+    <!-- ৪. বিশেষ পণ্য ৪ -->
+    <div class="card">
+      <div>
+        <img src="file_0000000022248211a7e100.jpg" alt="গ্রাম বাংলার পণ্য" class="product-img">
+        <h3>খাঁটি দেশীয় পণ্য</h3>
+        <p>
+          প্রাকৃতিক উপায়ে উৎপাদিত সম্পূর্ণ ভেজালমুক্ত ও সুস্বাদু গ্রামীণ খাবার।
+        </p>
+      </div>
+      <div>
+        <div class="price-tag">
+          অর্ডার করতে যোগাযোগ করুন
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
+      </div>
+    </div>
+
+    <!-- ৫. বিশেষ পণ্য ৫ -->
+    <div class="card">
+      <div>
+        <img src="file_0000000035348208924820.jpg" alt="প্রাকৃতিক খাদ্য" class="product-img">
+        <h3>প্রাকৃতিক স্বাস্থ্যকর খাদ্য</h3>
+        <p>
+          স্বাস্থ্য সুরক্ষায় ১০০% খাঁটি উপাদান দিয়ে তৈরি বিশেষ গ্রামীণ খাদ্যপণ্য।
+        </p>
+      </div>
+      <div>
+        <div class="price-tag">
+          অর্ডার করতে যোগাযোগ করুন
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
+      </div>
+    </div>
+
+    <!-- ৬. বিশেষ পণ্য ৬ -->
+    <div class="card">
+      <div>
+        <img src="file_0000000067108211872a20.jpg" alt="গ্রামের ঐতিহ্যবাহী খাবার" class="product-img">
+        <h3>ঐতিহ্যবাহী খাবার</h3>
+        <p>
+          গ্রামের মা-বোনের হাতে তৈরি আসল স্বাদের ঘরোয়া প্রাকৃতিক খাবার।
+        </p>
+      </div>
+      <div>
+        <div class="price-tag">
+          অর্ডার করতে যোগাযোগ করুন
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
+      </div>
+    </div>
+
+    <!-- ৭. বিশেষ পণ্য ৭ -->
+    <div class="card">
+      <div>
+        <img src="file_00000000c8a82088a876ba.jpg" alt="খাঁটি গ্রামীণ পণ্য" class="product-img">
+        <h3>বিশেষ উপহার প্যাক</h3>
+        <p>
+          আপনার প্রিয়জনের স্বাস্থ্য সুরক্ষায় আমাদের বিশেষ অর্গানিক গিফট প্যাক।
+        </p>
+      </div>
+      <div>
+        <div class="price-tag">
+          অর্ডার করতে যোগাযোগ করুন
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
+      </div>
+    </div>
+
+    <!-- ৮. বিশেষ পণ্য ৮ -->
+    <div class="card">
+      <div>
+        <img src="file_00000000d00820a973e9be.jpg" alt="অর্গানিক খাবার" class="product-img">
+        <h3>অর্গানিক খাদ্য সামগ্রী</h3>
+        <p>
+          প্রকৃতির সেরা সতেজতা ও গুণমান বজায় রেখে প্রস্তুতকৃত আসল খাদ্য।
+        </p>
+      </div>
+      <div>
+        <div class="price-tag">
+          অর্ডার করতে যোগাযোগ করুন
+        </div>
+        <a href="https://wa.me/8801309176474?text=আমি%20এই%20পণ্যটি%20অর্ডার%20করতে%20চাই" class="order-btn" target="_blank">অর্ডার করুন (WhatsApp)</a>
       </div>
     </div>
 
@@ -253,17 +368,17 @@ footer p{
 <section class="about">
   <h2>আমাদের সম্পর্কে</h2>
   <p>
-    <strong>গ্রাম বাংলার বাজার</strong> একটি দেশীয় উদ্যোগ[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span)[span_21](start_span)[span_21](end_span)[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span)। 
-    প্রস্তুতকারক <strong>মো: আরিফুল ইসলাম</strong>-এর তত্ত্বাবধানে বাংলাদেশের গ্রামীণ ঐতিহ্যবাহী খাবার ও কৃষিজ পণ্যকে ১০০% প্রাকৃতিক ও খাঁটি উপায়ে মানুষের কাছে পৌঁছে দেওয়াই আমাদের প্রধান লক্ষ্য[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span)[span_26](start_span)[span_26](end_span)[span_27](start_span)[span_27](end_span)[span_28](start_span)[span_28](end_span)[span_29](start_span)[span_29](end_span)[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span)।
+    <strong>গ্রাম বাংলার বাজার</strong> একটি দেশীয় উদ্যোগ। 
+    প্রস্তুতকারক <strong>মো: আরিফুল ইসলাম</strong>-এর তত্ত্বাবধানে বাংলাদেশের গ্রামীণ ঐতিহ্যবাহী খাবার ও কৃষিজ পণ্যকে ১০০% প্রাকৃতিক ও খাঁটি উপায়ে মানুষের কাছে পৌঁছে দেওয়াই আমাদের প্রধান লক্ষ্য।
   </p>
 </section>
 
 <section class="contact">
   <h2>যোগাযোগ করুন</h2>
-  <p>📍 <strong>ঠিকানা:</strong> পুঠিয়া, রাজশাহী, বাংলাদেশ</p>[span_32](start_span)[span_32](end_span)[span_33](start_span)[span_33](end_span)[span_34](start_span)[span_34](end_span)[span_35](start_span)[span_35](end_span)[span_36](start_span)[span_36](end_span)[span_37](start_span)[span_37](end_span)[span_38](start_span)[span_38](end_span)[span_39](start_span)[span_39](end_span)
-  <p>📱 <strong>হোয়াটসঅ্যাপ / ফোন:</strong> <a href="https://wa.me/8801309176474">+8801309176474</a></p>[span_40](start_span)[span_40](end_span)[span_41](start_span)[span_41](end_span)[span_42](start_span)[span_42](end_span)[span_43](start_span)[span_43](end_span)[span_44](start_span)[span_44](end_span)[span_45](start_span)[span_45](end_span)
-  <p>🌐 <strong>ওয়েবসাইট:</strong> <a href="https://grambanglarbazar.github.io" target="_blank">grambanglarbazar.github.io</a></p>[span_46](start_span)[span_46](end_span)[span_47](start_span)[span_47](end_span)[span_48](start_span)[span_48](end_span)[span_49](start_span)[span_49](end_span)[span_50](start_span)[span_50](end_span)[span_51](start_span)[span_51](end_span)[span_52](start_span)[span_52](end_span)[span_53](start_span)[span_53](end_span)
-  <p>Facebook <strong>ফেসবুক পেজ:</strong> <a href="https://www.facebook.com/share/1ESbvX3UQo/" target="_blank">গ্রাম বাংলার বাজার</a></p>[span_54](start_span)[span_54](end_span)[span_55](start_span)[span_55](end_span)[span_56](start_span)[span_56](end_span)[span_57](start_span)[span_57](end_span)[span_58](start_span)[span_58](end_span)[span_59](start_span)[span_59](end_span)[span_60](start_span)[span_60](end_span)[span_61](start_span)[span_61](end_span)
+  <p>📍 <strong>ঠিকানা:</strong> পুঠিয়া, রাজশাহী, বাংলাদেশ</p>
+  <p>📱 <strong>হোয়াটসঅ্যাপ / ফোন:</strong> <a href="https://wa.me/8801309176474">+8801309176474</a></p>
+  <p>🌐 <strong>ওয়েবসাইট:</strong> <a href="https://grambanglarbazar.github.io" target="_blank">grambanglarbazar.github.io</a></p>
+  <p>Facebook <strong>ফেসবুক পেজ:</strong> <a href="https://www.facebook.com/share/1ESbvX3UQo/" target="_blank">গ্রাম বাংলার বাজার</a></p>
 </section>
 
 <footer>
