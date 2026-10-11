@@ -8,17 +8,20 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f7f4; color: #2d3748; line-height: 1.6; }
         
-        /* Header & Hero Section */
+        /* Full Top Banner Section */
         header { 
-            background: linear-gradient(rgba(27, 67, 50, 0.9), rgba(27, 67, 50, 0.9)), url('1791052053666.jpg') center/cover no-repeat; 
-            color: #fff; 
-            text-align: center; 
-            padding: 40px 15px; 
+            width: 100%; 
+            background-color: #1b4332;
+            text-align: center;
         }
-        .logo { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #74c69d; margin-bottom: 12px; }
-        header h1 { font-size: 32px; color: #d8f3dc; margin-bottom: 5px; }
-        header p { font-size: 16px; opacity: 0.95; }
-        .tagline { font-size: 14px; background: #2d6a4f; display: inline-block; padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+        .main-banner {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-bottom: 3px solid #2d6a4f;
+        }
 
         .container { max-width: 1050px; margin: 25px auto; padding: 0 15px; }
 
@@ -31,6 +34,7 @@
             border-radius: 6px; 
             color: #664d03;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 15px;
         }
         .notice-board strong { color: #d90429; }
 
@@ -48,7 +52,15 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .product-img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        /* ছবির সম্পূর্ণ অংশ দেখানোর জন্য contain ব্যবহার করা হলো যাতে কোনো অংশ কেটে না যায় */
+        .product-img { 
+            width: 100%; 
+            height: 300px; 
+            object-fit: contain; 
+            background-color: #fafafa;
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+        }
         .product-card h3 { color: #1b4332; font-size: 20px; margin-bottom: 8px; }
         .weight-tag { background: #e8f5e9; color: #2e7d32; font-size: 13px; font-weight: bold; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px; }
         .price-tag { font-size: 22px; font-weight: bold; color: #d90429; margin-bottom: 15px; }
@@ -57,7 +69,7 @@
             background: #2d6a4f; 
             color: white; 
             border: none; 
-            padding: 10px 15px; 
+            padding: 11px 15px; 
             font-size: 16px; 
             font-weight: bold; 
             border-radius: 6px; 
@@ -67,7 +79,7 @@
         }
         .btn-buy:hover { background: #1b4332; }
 
-        /* Order Modal/Form Section */
+        /* Order Form Section */
         .order-section { 
             background: #fff; 
             padding: 30px; 
@@ -117,11 +129,9 @@
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Header Banner Section (সঠিক মূল ব্যানার ছবি) -->
     <header>
-        <h1>গ্রাম বাংলার বাজার</h1>
-        <p>প্রস্তুতকারক: মোঃ আরিফুল ইসলাম | ঠিকানা: পুঠিয়া, রাজশাহী</p>
-        <div class="tagline">প্রাকৃতিক • খাঁটি • স্বাস্থ্যকর</div>
+        <img src="1000073832.png" alt="গ্রাম বাংলার বাজার ব্যানার" class="main-banner">
     </header>
 
     <div class="container">
@@ -134,45 +144,45 @@
         <h2 style="text-align: center; margin-bottom: 25px; color: #1b4332;">আমাদের প্রাকৃতিক পণ্যসমূহ</h2>
         <div class="products-grid">
             
-            <!-- Product 1 -->
+            <!-- Product 1: খেজুরের বীজের কফি -->
             <div class="product-card">
                 <div>
-                    <img src="file_00000000c8a882088a876baf937c8c94.png" alt="খেজুরের বীজের কফি" class="product-img">
+                    <img src="1000073224.png" alt="খেজুরের বীজের কফি" class="product-img">
                     <h3>খেজুরের বীজের কফি</h3>
                     <span class="weight-tag">নেট ওজন: ৭৫ গ্রাম</span>
                     <p style="font-size: 13px; color: #666; margin-bottom: 10px;">অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ, হৃদযন্ত্র ও হজমের জন্য উপকারী।</p>
                 </div>
                 <div>
                     <div class="price-tag">৳ ১৫০</div>
-                    <button class="btn-buy" onclick="selectProduct('30/50/75g খেজুরের বীজের কফি (১৫০৳)')">অর্ডার করুন</button>
+                    <button class="btn-buy" onclick="selectProduct('খেজুরের বীজের কফি (৭৫ গ্রাম) - ১৫০৳')">অর্ডার করুন</button>
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            <!-- Product 2: কাঁঠালের চিপস -->
             <div class="product-card">
                 <div>
-                    <img src="IMG-20261008-WA0001.jpg" alt="কাঁঠালের চিপস" class="product-img">
+                    <img src="1000073793.jpg" alt="কাঁঠালের চিপস" class="product-img">
                     <h3>কাঁঠালের চিপস</h3>
                     <span class="weight-tag">নেট ওজন: ৭৫ গ্রাম (প্রায়)</span>
                     <p style="font-size: 13px; color: #666; margin-bottom: 10px;">ভিটামিন সমৃদ্ধ, হজমে সহায়ক ও কোনো কৃত্রিম রঙ ছাড়া।</p>
                 </div>
                 <div>
                     <div class="price-tag">৳ ১০০</div>
-                    <button class="btn-buy" onclick="selectProduct('কাঁঠালের চিপস - ৭৫ গ্রাম (১০০৳)')">অর্ডার করুন</button>
+                    <button class="btn-buy" onclick="selectProduct('কাঁঠালের চিপস (৭৫ গ্রাম) - ১০০৳')">অর্ডার করুন</button>
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            <!-- Product 3: কাঁঠালের বিচির চিপস -->
             <div class="product-card">
                 <div>
-                    <img src="file_00000000972482089649e190c912a281.png" alt="কাঁঠালের বিচির চিপস" class="product-img">
+                    <img src="1000074424.jpg" alt="কাঁঠালের বিচির চিপস" class="product-img">
                     <h3>কাঁঠালের বিচির চিপস</h3>
                     <span class="weight-tag">নেট ওজন: ১৫০ গ্রাম</span>
                     <p style="font-size: 13px; color: #666; margin-bottom: 10px;">উচ্চ প্রোটিন, খাদ্য আঁশ ও খনিজ সমৃদ্ধ পুষ্টিকর চিপস।</p>
                 </div>
                 <div>
                     <div class="price-tag">৳ ১৯০</div>
-                    <button class="btn-buy" onclick="selectProduct('কাঁঠালের বিচির চিপস - ১৫০ গ্রাম (১৯০৳)')">অর্ডার করুন</button>
+                    <button class="btn-buy" onclick="selectProduct('কাঁঠালের বিচির চিপস (১৫০ গ্রাম) - ১৯০৳')">অর্ডার করুন</button>
                 </div>
             </div>
 
@@ -224,7 +234,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Dynamic Interaction & WhatsApp Integration -->
+    <!-- JavaScript -->
     <script>
         function selectProduct(productName) {
             document.getElementById("product").value = productName;
