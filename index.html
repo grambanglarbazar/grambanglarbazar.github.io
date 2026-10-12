@@ -3,266 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গ্রাম বাংলার বাজার | খাঁটি ও প্রাকৃতিক পণ্য</title>
+    <title>প্রিমিয়াম শপ - অনলাইন শপিং</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f4; color: #2d3748; line-height: 1.6; }
-        
-        /* Full Top Banner Section */
-        header { 
-            width: 100%; 
-            background-color: #1b4332;
-            text-align: center;
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
         }
-        .main-banner {
-            width: 100%;
-            max-width: 1200px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-bottom: 3px solid #2d6a4f;
-        }
-
-        .container { max-width: 1050px; margin: 25px auto; padding: 0 15px; }
-
-        /* Delivery Notice Board */
-        .notice-board { 
-            background: #fff3cd; 
-            border-left: 5px solid #ffb703; 
-            padding: 15px; 
-            margin-bottom: 30px; 
-            border-radius: 6px; 
-            color: #664d03;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            font-size: 15px;
-        }
-        .notice-board strong { color: #d90429; }
-
-        /* Products Grid */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; margin-bottom: 45px; }
-        .product-card { 
-            background: #fff; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
-            text-align: center; 
-            padding: 18px; 
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        /* ছবির সম্পূর্ণ অংশ দেখানোর জন্য contain ব্যবহার করা হলো যাতে কোনো অংশ কেটে না যায় */
-        .product-img { 
-            width: 100%; 
-            height: 300px; 
-            object-fit: contain; 
-            background-color: #fafafa;
-            border-radius: 8px; 
-            margin-bottom: 15px; 
-        }
-        .product-card h3 { color: #1b4332; font-size: 20px; margin-bottom: 8px; }
-        .weight-tag { background: #e8f5e9; color: #2e7d32; font-size: 13px; font-weight: bold; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px; }
-        .price-tag { font-size: 22px; font-weight: bold; color: #d90429; margin-bottom: 15px; }
-        
-        .btn-buy { 
-            background: #2d6a4f; 
-            color: white; 
-            border: none; 
-            padding: 11px 15px; 
-            font-size: 16px; 
-            font-weight: bold; 
-            border-radius: 6px; 
-            cursor: pointer; 
-            width: 100%;
-            transition: background 0.3s;
-        }
-        .btn-buy:hover { background: #1b4332; }
-
-        /* Order Form Section */
-        .order-section { 
-            background: #fff; 
-            padding: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-            max-width: 650px; 
-            margin: 0 auto 40px auto; 
-            border-top: 5px solid #2d6a4f;
-        }
-        .order-section h2 { text-align: center; color: #1b4332; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; color: #4a5568; }
-        .form-group input, .form-group select, .form-group textarea { 
-            width: 100%; 
-            padding: 11px; 
-            border: 1px solid #cbd5e0; 
-            border-radius: 6px; 
-            font-size: 15px; 
-            outline: none;
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #2d6a4f; }
-        
-        .btn-order { 
-            background: #25d366; 
-            color: white; 
-            border: none; 
-            padding: 14px 20px; 
-            width: 100%; 
-            font-size: 18px; 
-            font-weight: bold; 
-            border-radius: 6px; 
-            cursor: pointer; 
-            transition: background 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .btn-order:hover { background: #128c7e; }
-
-        /* Footer */
-        footer { background: #1b4332; color: white; text-align: center; padding: 25px 15px; margin-top: 40px; }
-        footer p { margin-bottom: 8px; font-size: 14px; opacity: 0.9; }
-        .social-links a { color: #74c69d; margin: 0 8px; text-decoration: none; font-weight: bold; }
-        .social-links a:hover { text-decoration: underline; }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- Header Banner Section (সঠিক মূল ব্যানার ছবি) -->
-    <header>
-        <img src="1000073832.png" alt="গ্রাম বাংলার বাজার ব্যানার" class="main-banner">
+    <!-- Top Bar -->
+    <div class="bg-blue-600 text-white text-sm py-2 px-4 text-center">
+        <span>🎉 ফ্রি হোম ডেলিভারি অফার চলছে! হটলাইন: <strong class="underline">+৮৮০ ১৭১২-৩৪৫৬৭৮</strong></span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                🛒 প্রিমিয়াম শপ
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#" class="hover:text-blue-600 transition">হোম</a>
+                <a href="#products" class="hover:text-blue-600 transition">পণ্যসমূহ</a>
+                <a href="#about" class="hover:text-blue-600 transition">আমাদের সম্পর্কে</a>
+                <a href="#contact" class="hover:text-blue-600 transition">যোগাযোগ</a>
+            </nav>
+            <div>
+                <a href="#products" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium shadow hover:bg-blue-700 transition">অর্ডার করুন</a>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <!-- Notice Board -->
-        <div class="notice-board">
-            📌 <strong>ডেলিভারি সংক্রান্ত নোটিশ:</strong> সারা বাংলাদেশে হোম ডেলিভারি চার্জ <strong>১৫০ টাকা</strong>। ডেলিভারি চার্জের টাকা অগ্রিম প্রদান করে অর্ডার কনফার্ম করতে হবে, বাকি টাকা পণ্য হাতে পেয়ে মূল্য পরিশোধ (ক্যাশ অন ডেলিভারি) করতে পারবেন।
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 px-4 text-center">
+        <div class="container mx-auto max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">আপনার পছন্দের পণ্য কিনুন ঘরে বসেই</h1>
+            <p class="text-lg text-blue-100 mb-8">সেরা মানের পণ্য, সাশ্রয়ী মূল্য এবং দ্রুততম হোম ডেলিভারি।</p>
+            <a href="#products" class="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-gray-100 transition">পণ্যগুলো দেখুন</a>
         </div>
+    </section>
 
-        <!-- Products Section -->
-        <h2 style="text-align: center; margin-bottom: 25px; color: #1b4332;">আমাদের প্রাকৃতিক পণ্যসমূহ</h2>
-        <div class="products-grid">
-            
-            <!-- Product 1: খেজুরের বীজের কফি -->
-            <div class="product-card">
-                <div>
-                    <img src="1000073224.png" alt="খেজুরের বীজের কফি" class="product-img">
-                    <h3>খেজুরের বীজের কফি</h3>
-                    <span class="weight-tag">নেট ওজন: ৭৫ গ্রাম</span>
-                    <p style="font-size: 13px; color: #666; margin-bottom: 10px;">অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ, হৃদযন্ত্র ও হজমের জন্য উপকারী।</p>
-                </div>
-                <div>
-                    <div class="price-tag">৳ ১৫০</div>
-                    <button class="btn-buy" onclick="selectProduct('খেজুরের বীজের কফি (৭৫ গ্রাম) - ১৫০৳')">অর্ডার করুন</button>
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-2">আমাদের জনপ্রিয় পণ্যসমূহ</h2>
+        <p class="text-gray-500 text-center mb-10">আপনার পছন্দের পণ্যটি বেছে নিন এবং অর্ডার করুন</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="স্নিকার্স" class="w-full h-56 object-cover">
+                <div class="p-5">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">স্টাইলিশ লেদার ওয়াচ</h3>
+                    <p class="text-gray-600 text-sm mt-1">আকর্ষণীয় ডিজাইনের প্রিমিয়াম কোয়ালিটি ঘড়ি।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">১,৫০০ টাকা</span>
+                        <button onclick="openOrderModal('স্টাইলিশ লেদার ওয়াচ', '১৫০০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Product 2: কাঁঠালের চিপস -->
-            <div class="product-card">
-                <div>
-                    <img src="1000073793.jpg" alt="কাঁঠালের চিপস" class="product-img">
-                    <h3>কাঁঠালের চিপস</h3>
-                    <span class="weight-tag">নেট ওজন: ৭৫ গ্রাম (প্রায়)</span>
-                    <p style="font-size: 13px; color: #666; margin-bottom: 10px;">ভিটামিন সমৃদ্ধ, হজমে সহায়ক ও কোনো কৃত্রিম রঙ ছাড়া।</p>
-                </div>
-                <div>
-                    <div class="price-tag">৳ ১০০</div>
-                    <button class="btn-buy" onclick="selectProduct('কাঁঠালের চিপস (৭৫ গ্রাম) - ১০০৳')">অর্ডার করুন</button>
-                </div>
-            </div>
-
-            <!-- Product 3: কাঁঠালের বিচির চিপস -->
-            <div class="product-card">
-                <div>
-                    <img src="1000074424.jpg" alt="কাঁঠালের বিচির চিপস" class="product-img">
-                    <h3>কাঁঠালের বিচির চিপস</h3>
-                    <span class="weight-tag">নেট ওজন: ১৫০ গ্রাম</span>
-                    <p style="font-size: 13px; color: #666; margin-bottom: 10px;">উচ্চ প্রোটিন, খাদ্য আঁশ ও খনিজ সমৃদ্ধ পুষ্টিকর চিপস।</p>
-                </div>
-                <div>
-                    <div class="price-tag">৳ ১৯০</div>
-                    <button class="btn-buy" onclick="selectProduct('কাঁঠালের বিচির চিপস (১৫০ গ্রাম) - ১৯০৳')">অর্ডার করুন</button>
+            <!-- Product 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="হেডফোন" class="w-full h-56 object-cover">
+                <div class="p-5">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">ওয়্যারলেস ব্লুটুথ হেডফোন</h3>
+                    <p class="text-gray-600 text-sm mt-1">নয়েজ ক্যান্সেলেশন এবং লং লাস্টিং ব্যাটারি ব্যাকআপ।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">২,২০০ টাকা</span>
+                        <button onclick="openOrderModal('ওয়্যারলেস ব্লুটুথ হেডফোন', '২২০০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    </div>
                 </div>
             </div>
 
+            <!-- Product 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="শুস" class="w-full h-56 object-cover">
+                <div class="p-5">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">রানিং স্পোর্টস শু</h3>
+                    <p class="text-gray-600 text-sm mt-1">খেলার মাঠ বা জিমের জন্য অত্যন্ত আরামদায়ক জুতো।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">২,৮০০ টাকা</span>
+                        <button onclick="openOrderModal('রানিং স্পোর্টস শু', '২৮০০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Order Form Section -->
-        <div class="order-section" id="orderFormArea">
-            <h2>অর্ডার কনফার্ম করুন</h2>
-            <form id="whatsappForm">
-                <div class="form-group">
-                    <label for="name">আপনার নাম:</label>
-                    <input type="text" id="name" required placeholder="আপনার পুরো নাম লিখুন">
+    <!-- Order Modal / Popup -->
+    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50 px-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold">&times;</button>
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">অর্ডার কনফার্ম করুন</h3>
+            <p id="modalProductName" class="text-gray-600 text-sm mb-4 font-semibold"></p>
+
+            <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">আপনার নাম</label>
+                    <input type="text" id="customerName" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="পূর্ণ নাম লিখুন">
                 </div>
-                <div class="form-group">
-                    <label for="phone">মোবাইল নম্বর:</label>
-                    <input type="tel" id="phone" required placeholder="01XXXXXXXXX">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">মোবাইল নম্বর</label>
+                    <input type="tel" id="customerPhone" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="০১XXXXXXXXX">
                 </div>
-                <div class="form-group">
-                    <label for="address">পূর্ণাঙ্গ ঠিকানা:</label>
-                    <textarea id="address" rows="3" required placeholder="গ্রাম/রোড, থানা, জেলা"></textarea>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">ডেলিভারি ঠিকানা</label>
+                    <textarea id="customerAddress" required rows="3" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="বাসার নম্বর, রোড, থানা, জেলা"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="product">নির্বাচিত পণ্য:</label>
-                    <select id="product" required>
-                        <option value="">পণ্য নির্বাচন করুন</option>
-                        <option value="খেজুরের বীজের কফি (৭৫ গ্রাম) - ১৫০৳">খেজুরের বীজের কফি (৭৫ গ্রাম) - ১৫০৳</option>
-                        <option value="কাঁঠালের চিপস (৭৫ গ্রাম) - ১০০৳">কাঁঠালের চিপস (৭৫ গ্রাম) - ১০০৳</option>
-                        <option value="কাঁঠালের বিচির চিপস (১৫০ গ্রাম) - ১৯০৳">কাঁঠালের বিচির চিপস (১৫০ গ্রাম) - ১৯০৳</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="quantity">পরিমাণ (প্যাক):</label>
-                    <input type="number" id="quantity" min="1" value="1" required>
-                </div>
-                <button type="button" onclick="sendToWhatsApp()" class="btn-order">
-                    WhatsApp-এ সরাসরি অর্ডার পাঠান 🛒
-                </button>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow hover:bg-blue-700 transition">অর্ডার সাবমিট করুন</button>
             </form>
         </div>
     </div>
 
+    <!-- Success Message Section -->
+    <div id="successMessage" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl">
+            <div class="text-green-500 text-5xl mb-3">✅</div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">অর্ডার সফল হয়েছে!</h3>
+            <p class="text-gray-600 text-sm mb-6">খুব শীঘ্রই আমাদের প্রতিনিধি আপনার সাথে মোবাইল নম্বরে যোগাযোগ করবে।</p>
+            <button onclick="closeSuccessModal()" class="bg-blue-600 text-white font-bold px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition">ঠিক আছে</button>
+        </div>
+    </div>
+
     <!-- Footer Section -->
-    <footer>
-        <p>© গ্রাম বাংলার বাজার - পুঠিয়া, রাজশাহী</p>
-        <p>মোবাইল / হোয়াটসঅ্যাপ: +8801309176474</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/1ESbvX3UQo/" target="_blank">ফেসবুক পেজ</a> | 
-            <a href="https://wa.me/8801309176474" target="_blank">WhatsApp কন্টাক্ট</a>
+    <footer id="contact" class="bg-gray-900 text-white py-10 px-4 mt-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-3 text-blue-400">প্রিমিয়াম শপ</h3>
+                <p class="text-gray-400 text-sm">আমরা দিচ্ছি শতভাগ অরিজিনাল পণ্যের নিশ্চয়তা এবং দারুণ কাস্টমার সাপোর্ট।</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-3 text-blue-400">যোগাযোগ</h3>
+                <p class="text-gray-400 text-sm mb-1">📞 হটলাইন: +৮৮০ ১৭১২-৩৪৫৬৭৮</p>
+                <p class="text-gray-400 text-sm mb-1">📧 ইমেইল: support@premiumshop.com</p>
+                <p class="text-gray-400 text-sm">🏢 ঠিকানা: ঢাকা, বাংলাদেশ</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-3 text-blue-400">ফেসবুক পেজ ও সোশ্যাল</h3>
+                <p class="text-gray-400 text-sm mb-3">আমাদের সাথে যুক্ত থাকতে ভিজিট করুন:</p>
+                <a href="https://facebook.com" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">ফেসবুক পেজ ভিজিট করুন</a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+            &copy; ২০২৬ প্রিমিয়াম শপ। সর্বস্বত্ব সংরক্ষিত।
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for Interactivity -->
     <script>
-        function selectProduct(productName) {
-            document.getElementById("product").value = productName;
-            document.getElementById("orderFormArea").scrollIntoView({ behavior: 'smooth' });
+        let selectedProduct = "";
+        let selectedPrice = "";
+
+        function openOrderModal(productName, price) {
+            selectedProduct = productName;
+            selectedPrice = price;
+            document.getElementById('modalProductName').innerText = `পণ্য: ${productName} - মূল্য: ${price} টাকা`;
+            document.getElementById('orderModal').classList.remove('hidden');
         }
 
-        function sendToWhatsApp() {
-            var name = document.getElementById("name").value.trim();
-            var phone = document.getElementById("phone").value.trim();
-            var address = document.getElementById("address").value.trim();
-            var product = document.getElementById("product").value;
-            var quantity = document.getElementById("quantity").value;
+        function closeOrderModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+        }
 
-            if (name === "" || phone === "" || address === "" || product === "") {
-                alert("অনুগ্রহ করে ফর্মে আপনার নাম, মোবাইল নম্বর, ঠিকানা এবং পণ্য পূরণ করুন!");
-                return;
-            }
+        function submitOrder(event) {
+            event.preventDefault();
+            closeOrderModal();
+            document.getElementById('successMessage').classList.remove('hidden');
+            document.getElementById('orderForm').reset();
+        }
 
-            var message = "*নতুন অর্ডার - গ্রাম বাংলার বাজার*" + "%0A%0A" +
-                "*গ্রাহকের নাম:* " + encodeURIComponent(name) + "%0A" +
-                "*মোবাইল নম্বর:* " + encodeURIComponent(phone) + "%0A" +
-                "*ঠিকানা:* " + encodeURIComponent(address) + "%0A" +
-                "*অর্ডারকৃত পণ্য:* " + encodeURIComponent(product) + "%0A" +
-                "*পরিমাণ:* " + encodeURIComponent(quantity) + " টি%0A%0A" +
-                "_নোট: সারা দেশে ডেলিভারি চার্জ ১৫০ টাকা আলাদা প্রযোজ্য।_";
-
-            var whatsappURL = "https://wa.me/8801309176474?text=" + message;
-            window.open(whatsappURL, '_blank');
+        function closeSuccessModal() {
+            document.getElementById('successMessage').classList.add('hidden');
         }
     </script>
 </body>
