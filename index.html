@@ -3,593 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>প্রকৃতি ফুডস | স্বাস্থ্যকর ও খাঁটি খাবার</title>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>গ্রাম বাংলার বাজার - অনলাইন শপিং</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Hind Siliguri', 'Kalpurush', sans-serif, Arial;
-        }
         body {
-            background-color: #f8f9fa;
-            color: #333;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: #1b4332;
-            color: white;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: #2d6a4f;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: #d8f3dc;
-            border: 2px solid #52b788;
-        }
-        .brand-name h1 {
-            font-size: 22px;
-            color: #ffffff;
-            line-height: 1.2;
-        }
-        .brand-name span {
-            font-size: 12px;
-            color: #b7e4c7;
-        }
-
-        /* Banner */
-        .hero-banner {
-            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(45, 106, 79, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000') center/cover;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .hero-banner h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        /* Section Title */
-        .section-title {
-            text-align: center;
-            margin: 30px 0 20px;
-            font-size: 24px;
-            color: #1b4332;
-        }
-
-        /* Products Container */
-        .products-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px 40px;
-        }
-
-        /* Main Product Card */
-        .product-section {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .featured-product {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-            border-bottom: 2px border-dash #eee;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        .featured-img {
-            width: 100%;
-            max-width: 280px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 0 auto;
-        }
-        .featured-details {
-            flex: 1;
-            min-width: 280px;
-        }
-        .featured-details h3 {
-            font-size: 22px;
-            color: #2d6a4f;
-            margin-bottom: 8px;
-        }
-        .featured-details p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 12px;
-        }
-        .badge {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 4px 10px;
-            font-size: 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        /* Horizontal Scroll Carousel for Variants */
-        .variant-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 12px;
-        }
-        .scroll-container {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-            scrollbar-width: thin;
-            scrollbar-color: #52b788 #e0e0e0;
-        }
-        .scroll-container::-webkit-scrollbar {
-            height: 6px;
-        }
-        .scroll-container::-webkit-scrollbar-thumb {
-            background-color: #52b788;
-            border-radius: 10px;
-        }
-
-        /* Variant Card */
-        .variant-card {
-            min-width: 160px;
-            background: #f8f9fa;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 12px;
-            text-align: center;
-            flex-shrink: 0;
-            transition: 0.3s;
-        }
-        .variant-card:hover {
-            border-color: #52b788;
-            transform: translateY(-3px);
-        }
-        .variant-card img {
-            width: 100px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 8px;
-        }
-        .variant-size {
-            font-weight: bold;
-            font-size: 14px;
-            color: #1b4332;
-        }
-        .variant-price {
-            color: #d90429;
-            font-weight: bold;
-            margin: 5px 0;
-            font-size: 15px;
-        }
-
-        /* Order Button */
-        .btn-order {
-            background-color: #2d6a4f;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            font-size: 13px;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-        .btn-order:hover {
-            background-color: #1b4332;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1b4332;
-            color: white;
-            padding: 30px 20px 15px;
-            text-align: center;
-        }
-        .footer-socials {
-            margin: 15px 0;
-        }
-        .footer-socials a {
-            color: white;
-            font-size: 20px;
-            margin: 0 10px;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.2s;
-        }
-        .footer-socials a:hover {
-            color: #52b788;
-        }
-
-        /* Order Modal / Popup */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-        }
-        .modal-content {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            max-width: 450px;
-            width: 100%;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .close-btn {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            font-size: 22px;
-            cursor: pointer;
-            color: #888;
-        }
-        .modal h3 {
-            color: #1b4332;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 12px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-        .btn-submit {
-            background-color: #25D366; /* WhatsApp Green */
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        .btn-submit:hover {
-            background-color: #1da851;
+            font-family: 'Hind Siliguri', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo-container">
-            <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
-            <div class="brand-name">
-                <h1>প্রকৃতি ফুডস</h1>
-                <span>১০০% খাঁটি ও প্রাকৃতিক খাবার</span>
+    <!-- Top Bar -->
+    <div class="bg-blue-600 text-white text-sm py-2 px-4 text-center">
+        <span>🎉 ফ্রি হোম ডেলিভারি অফার চলছে! হটলাইন: <strong class="underline">+8801309176474</strong></span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">🛒</span>
+                <span class="text-2xl font-bold text-blue-600">গ্রাম বাংলার বাজার</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#" class="hover:text-blue-600 transition">হোম</a>
+                <a href="#products" class="hover:text-blue-600 transition">পণ্যসমূহ</a>
+                <a href="#about" class="hover:text-blue-600 transition">আমাদের সম্পর্কে</a>
+                <a href="#contact" class="hover:text-blue-600 transition">যোগাযোগ</a>
+            </nav>
+            <div>
+                <a href="#products" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium shadow hover:bg-blue-700 transition">অর্ডার করুন</a>
             </div>
         </div>
     </header>
 
-    <!-- Banner -->
-    <section class="hero-banner">
-        <h2>প্রাকৃতিক ও স্বাস্থ্যকর পণ্যের সমাহার</h2>
-        <p>সরাসরি ঘরোয়া ও ক্যাফেইন-মুক্ত পুষ্টিকর খাবার আপনার দোরগোড়ায়</p>
+    <!-- Main Large Banner Section -->
+    <section class="bg-gray-100 py-4 px-2 md:px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="overflow-hidden rounded-2xl shadow-xl border border-gray-200">
+                <!-- ব্যানার ছবির নাম পরিবর্তন করার জায়গা -->
+                <img src="file_00000000972482089649e190c912a281.png" alt="গ্রাম বাংলার বাজার ব্যানার" class="w-full h-auto object-cover block">
+            </div>
+        </div>
     </section>
 
-    <!-- Main Products Section -->
-    <div class="products-container">
-        <h2 class="section-title">আমাদের বিশেষ পণ্যসমূহ</h2>
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-2 text-gray-800">আমাদের জনপ্রিয় পণ্যসমূহ</h2>
+        <p class="text-gray-500 text-center mb-10 text-base">আপনার পছন্দের পণ্যটি বেছে নিন এবং অর্ডার করুন</p>
 
-        <!-- Product 1: Date Seed Coffee -->
-        <div class="product-section">
-            <div class="featured-product">
-                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=400" alt="খেজুরের বীজের কফি" class="featured-img">
-                <div class="featured-details">
-                    <span class="badge">ক্যাফেইন মুক্ত</span>
-                    <h3>১. খেজুরের বীজের কফি (Date Seed Coffee)</h3>
-                    <p>খেজুরের বীজ দিয়ে তৈরি সম্পূর্ণ ক্যাফেইন-মুক্ত স্বাস্থ্যকর অর্গানিক কফি। রক্তচাপ ও ডায়াবেটিস নিয়ন্ত্রণে অত্যন্ত কার্যকরী।</p>
-                    <p><strong>মূল প্যাক:</strong> ১০০ গ্রাম</p>
-                    <p style="color: #d90429; font-weight: bold; margin-top: 5px;">মূল্য: ২৫০ টাকা</p>
-                    <button class="btn-order" onclick="openOrderModal('খেজুরের বীজের কফি - ১০০ গ্রাম')"><i class="fa-solid fa-cart-shopping"></i> এখনই অর্ডার করুন</button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between">
+                <div class="w-full bg-gray-50 p-4 flex justify-center">
+                    <img src="IMG-20261008-WA0001.jpg" alt="কাঁঠালের বিচির চিপস" class="w-full h-auto block">
+                </div>
+                <div class="p-5 border-t border-gray-100">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">কাঁঠালের বিচির চিপস</h3>
+                    <p class="text-gray-600 text-sm mt-1">প্রকৃতির সুস্বাদে গ্রামের স্বাদ, ১০০% প্রাকৃতিক ও স্বাস্থ্যকর চিপস।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">১৯০ টাকা</span>
+                        <button onclick="openOrderModal('কাঁঠালের বিচির চিপস', '১৯০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    </div>
                 </div>
             </div>
-            <div class="variant-title">অন্যান্য সাইজের প্যাকেটে উপলব্ধ: (ডানে স্করোল করুন)</div>
-            <div class="scroll-container">
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="150g Pack">
-                    <div class="variant-size">১৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৩৬০</div>
-                    <button class="btn-order" onclick="openOrderModal('খেজুরের বীজের কফি - ১৫০ গ্রাম')">অর্ডার করুন</button>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between">
+                <div class="w-full bg-gray-50 p-4 flex justify-center">
+                    <img src="file_000000003534820892482020ef93e8a2.png" alt="খেজুরের বীজের কফি" class="w-full h-auto block">
                 </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="200g Pack">
-                    <div class="variant-size">২০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৪৭০</div>
-                    <button class="btn-order" onclick="openOrderModal('খেজুরের বীজের কফি - ২০০ গ্রাম')">অর্ডার করুন</button>
+                <div class="p-5 border-t border-gray-100">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">খেজুরের বীজের কফি</h3>
+                    <p class="text-gray-600 text-sm mt-1">অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ ও প্রাকৃতিক শক্তিবর্ধক প্রিমিয়াম কোয়ালিটি কফি।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">১৫০ টাকা</span>
+                        <button onclick="openOrderModal('খেজুরের বীজের কফি', '১৫০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    </div>
                 </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="250g Pack">
-                    <div class="variant-size">২৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৫৮০</div>
-                    <button class="btn-order" onclick="openOrderModal('খেজুরের বীজের কফি - ২৫০ গ্রাম')">অর্ডার করুন</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between">
+                <div class="w-full bg-gray-50 p-4 flex justify-center">
+                    <img src="file_00000000c8a882088a876baf937c8c94.png" alt="পাকা আমের চিপস" class="w-full h-auto block">
                 </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="300g Pack">
-                    <div class="variant-size">৩০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৬৮০</div>
-                    <button class="btn-order" onclick="openOrderModal('খেজুরের বীজের কফি - ৩০০ গ্রাম')">অর্ডার করুন</button>
+                <div class="p-5 border-t border-gray-100">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">পাকা আমের চিপস</h3>
+                    <p class="text-gray-600 text-sm mt-1">প্রাকৃতিক স্বাদের অসাধারণ স্বাদ, কোনো কৃত্রিম রঙ বা কেমিক্যাল ছাড়া।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">১০০ টাকা</span>
+                        <button onclick="openOrderModal('পাকা আমের চিপস', '১০০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Product 2: Jackfruit Chips -->
-        <div class="product-section">
-            <div class="featured-product">
-                <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?q=80&w=400" alt="কাঁঠালের চিপস" class="featured-img">
-                <div class="featured-details">
-                    <span class="badge">মচমচে ও সুস্বাদু</span>
-                    <h3>২. কাঁঠালের চিপস (Jackfruit Chips)</h3>
-                    <p>পরিপক্ক কাঁঠাল থেকে তৈরি সুস্বাদু ও পুষ্টিকর চিপস। কোনো কৃত্রিম রঙ বা ক্ষতিকর কেমিক্যাল ব্যবহার করা হয়নি।</p>
-                    <p><strong>মূল প্যাক:</strong> ১০০ গ্রাম</p>
-                    <p style="color: #d90429; font-weight: bold; margin-top: 5px;">মূল্য: ১৫০ টাকা</p>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের চিপস - ১০০ গ্রাম')"><i class="fa-solid fa-cart-shopping"></i> এখনই অর্ডার করুন</button>
-                </div>
-            </div>
-            <div class="variant-title">অন্যান্য সাইজের প্যাকেটে উপলব্ধ: (ডানে স্করোল করুন)</div>
-            <div class="scroll-container">
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?q=80&w=200" alt="150g Pack">
-                    <div class="variant-size">১৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ২২০</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের চিপস - ১৫০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?q=80&w=200" alt="200g Pack">
-                    <div class="variant-size">২০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ২৯০</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের চিপস - ২০০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?q=80&w=200" alt="250g Pack">
-                    <div class="variant-size">২৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৩৫০</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের চিপস - ২৫০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?q=80&w=200" alt="300g Pack">
-                    <div class="variant-size">৩০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৪10</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের চিপস - ৩০০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-            </div>
-        </div>
+    <!-- Order Modal / Popup -->
+    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50 px-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold">&times;</button>
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">অর্ডার কনফার্ম করুন</h3>
+            <p id="modalProductName" class="text-gray-600 text-sm mb-4 font-semibold"></p>
 
-        <!-- Product 3: Ripe Mango Chips -->
-        <div class="product-section">
-            <div class="featured-product">
-                <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=400" alt="পাকা আমের চিপস" class="featured-img">
-                <div class="featured-details">
-                    <span class="badge">মিষ্টি ও রসামৃত</span>
-                    <h3>৩. পাকা আমের চিপস (Ripe Mango Chips)</h3>
-                    <p>পাকা আম শুকিয়ে প্রাকৃতিকভাবে তৈরি চিপস। যেকোনো বয়সের মানুষের বিকেলের স্ন্যাক্স হিসেবে অসাধারণ।</p>
-                    <p><strong>মূল প্যাক:</strong> ১০০ গ্রাম</p>
-                    <p style="color: #d90429; font-weight: bold; margin-top: 5px;">মূল্য: ১৮০ টাকা</p>
-                    <button class="btn-order" onclick="openOrderModal('পাকা আমের চিপস - ১০০ গ্রাম')"><i class="fa-solid fa-cart-shopping"></i> এখনই অর্ডার করুন</button>
+            <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">আপনার নাম</label>
+                    <input type="text" id="customerName" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="পূর্ণ নাম লিখুন">
                 </div>
-            </div>
-            <div class="variant-title">অন্যান্য সাইজের প্যাকেটে উপলব্ধ: (ডানে স্করোল করুন)</div>
-            <div class="scroll-container">
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=200" alt="150g Pack">
-                    <div class="variant-size">১৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ২৬০</div>
-                    <button class="btn-order" onclick="openOrderModal('পাকা আমের চিপস - ১৫০ গ্রাম')">অর্ডার করুন</button>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">মোবাইল নম্বর</label>
+                    <input type="tel" id="customerPhone" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="০১XXXXXXXXX">
                 </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=200" alt="200g Pack">
-                    <div class="variant-size">২০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৩40</div>
-                    <button class="btn-order" onclick="openOrderModal('পাকা আমের চিপস - ২০০ গ্রাম')">অর্ডার করুন</button>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">ডেলিভারি ঠিকানা</label>
+                    <textarea id="customerAddress" required rows="3" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="বাসার নম্বর, রোড, থানা, জেলা"></textarea>
                 </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=200" alt="250g Pack">
-                    <div class="variant-size">২৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৪২০</div>
-                    <button class="btn-order" onclick="openOrderModal('পাকা আমের চিপস - ২৫০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=200" alt="300g Pack">
-                    <div class="variant-size">৩০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৫০০</div>
-                    <button class="btn-order" onclick="openOrderModal('পাকা আমের চিপস - ৩০০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product 4: Jackfruit Seed Chips -->
-        <div class="product-section">
-            <div class="featured-product">
-                <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=400" alt="কাঁঠালের বীজের চিপস" class="featured-img">
-                <div class="featured-details">
-                    <span class="badge">হাই প্রোটিন</span>
-                    <h3>৪. কাঁঠালের বীজের চিপস (Jackfruit Seed Chips)</h3>
-                    <p>কাঁঠালের বীজ প্রসেস করে তৈরি পুষ্টিকর ও ক্রিসপি চিপস। প্রোটিন ও ফাইবারে ভরপুর অত্যন্ত মচমচে খাবার।</p>
-                    <p><strong>মূল প্যাক:</strong> ১০০ গ্রাম</p>
-                    <p style="color: #d90429; font-weight: bold; margin-top: 5px;">মূল্য: ১৩০ টাকা</p>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের বীজের চিপস - ১০০ গ্রাম')"><i class="fa-solid fa-cart-shopping"></i> এখনই অর্ডার করুন</button>
-                </div>
-            </div>
-            <div class="variant-title">অন্যান্য সাইজের প্যাকেটে উপলব্ধ: (ডানে স্করোল করুন)</div>
-            <div class="scroll-container">
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=200" alt="150g Pack">
-                    <div class="variant-size">১৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ১৮০</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের বীজের চিপস - ১৫০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=200" alt="200g Pack">
-                    <div class="variant-size">২০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ২৪০</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের বীজের চিপস - ২০০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=200" alt="250g Pack">
-                    <div class="variant-size">২৫০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ২৯০</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের বীজের চিপস - ২৫০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-                <div class="variant-card">
-                    <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=200" alt="300g Pack">
-                    <div class="variant-size">৩০০ গ্রাম প্যাক</div>
-                    <div class="variant-price">৳ ৩40</div>
-                    <button class="btn-order" onclick="openOrderModal('কাঁঠালের বীজের চিপস - ৩০০ গ্রাম')">অর্ডার করুন</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Order Modal (Popup Form) -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeOrderModal()">&times;</span>
-            <h3><i class="fa-solid fa-cart-flatbed"></i> আপনার অর্ডার তথ্য দিন</h3>
-            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
-                <div class="form-group">
-                    <label for="custName">আপনার নাম:</label>
-                    <input type="text" id="custName" placeholder="যেমন: আব্দুর রহমান" required>
-                </div>
-                <div class="form-group">
-                    <label for="custPhone">মোবাইল নম্বর:</label>
-                    <input type="tel" id="custPhone" placeholder="০১৭XXXXXXXX" required>
-                </div>
-                <div class="form-group">
-                    <label for="custAddress">সম্পূর্ণ ঠিকানা:</label>
-                    <textarea id="custAddress" rows="2" placeholder="বাড়ি/রোড নম্বর, থানা, জেলা" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="custProduct">বাছাইকৃত পণ্য:</label>
-                    <input type="text" id="custProduct" readonly style="background: #e9ecef;">
-                </div>
-                <button type="submit" class="btn-submit">
-                    <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে অর্ডার কনফার্ম করুন
-                </button>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow hover:bg-blue-700 transition">অর্ডার সাবমিট করুন</button>
             </form>
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p><strong>প্রকৃতি ফুডস (Prokriti Foods)</strong></p>
-        <p>যোগাযোগ: +8801700000000 | ইমেইল: info@prokritifoods.com</p>
-        
-        <div class="footer-socials">
-            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://wa.me/8801700000000" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <!-- Success Message Section -->
+    <div id="successMessage" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl">
+            <div class="text-green-500 text-5xl mb-3">✅</div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">অর্ডার সফল হয়েছে!</h3>
+            <p class="text-gray-600 text-sm mb-6">খুব শীঘ্রই আমাদের প্রতিনিধি আপনার সাথে মোবাইল নম্বরে যোগাযোগ করবে।</p>
+            <button onclick="closeSuccessModal()" class="bg-blue-600 text-white font-bold px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition">ঠিক আছে</button>
         </div>
-        
-        <p style="font-size: 12px; color: #a3b18a;">&copy; ২০২৬ প্রকৃতি ফুডস। সর্বস্বত্ব সংরক্ষিত।</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-gray-900 text-white py-10 px-4 mt-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-3 text-blue-400">গ্রাম বাংলার বাজার</h3>
+                <p class="text-gray-400 text-sm">আমরা দিচ্ছি শতভাগ অরিজিনাল পণ্যের নিশ্চয়তা এবং দারুণ কাস্টমার সাপোর্ট।</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-3 text-blue-400">যোগাযোগ</h3>
+                <p class="text-gray-400 text-sm mb-1">📞 হটলাইন: +8801309176474</p>
+                <p class="text-gray-400 text-sm mb-1">📧 ইমেইল: mamdarif006@gmail.com</p>
+                <p class="text-gray-400 text-sm">🏢 ঠিকানা: পুঠিয়া, রাজশাহী, বাংলাদেশ</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-3 text-blue-400">ফেসবুক পেজ ও সোশ্যাল</h3>
+                <p class="text-gray-400 text-sm mb-3">আমাদের সাথে যুক্ত থাকতে ভিজিট করুন:</p>
+                <a href="https://www.facebook.com/share/1ESbvX3UQo/" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">ফেসবুক পেজ ভিজিট করুন</a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+            &copy; ২০২৬ গ্রাম বাংলার বাজার। সর্বস্বত্ব সংরক্ষিত।
+        </div>
     </footer>
 
-    <!-- JavaScript Logic -->
+    <!-- JavaScript for Interactivity -->
     <script>
-        // আপনার আসল হোয়াটসঅ্যাপ নম্বরটি নিচে দিন (দেশের কোড সহ, যেমন 88017XXXXXXXX)
-        const myWhatsAppNumber = "8801700000000"; 
+        let selectedProduct = "";
+        let selectedPrice = "";
 
-        function openOrderModal(productName) {
-            document.getElementById('custProduct').value = productName;
-            document.getElementById('orderModal').style.display = 'flex';
+        function openOrderModal(productName, price) {
+            selectedProduct = productName;
+            selectedPrice = price;
+            document.getElementById('modalProductName').innerText = `পণ্য: ${productName} - মূল্য: ${price} টাকা`;
+            document.getElementById('orderModal').classList.remove('hidden');
         }
 
         function closeOrderModal() {
-            document.getElementById('orderModal').style.display = 'none';
+            document.getElementById('orderModal').classList.add('hidden');
         }
 
-        function sendToWhatsApp(event) {
+        function submitOrder(event) {
             event.preventDefault();
-
-            let name = document.getElementById('custName').value;
-            let phone = document.getElementById('custPhone').value;
-            let address = document.getElementById('custAddress').value;
-            let product = document.getElementById('custProduct').value;
-
-            // WhatsApp Message Format
-            let message = `*নতুন অর্ডার এসেছে!*%0A%0A` +
-                          `*নাম:* ${name}%0A` +
-                          `*মোবাইল নম্বর:* ${phone}%0A` +
-                          `*ঠিকানা:* ${address}%0A` +
-                          `*পণ্যসমূহ:* ${product}%0A%0A` +
-                          `ধন্যবাদ!`;
-
-            let whatsappURL = `https://wa.me/${myWhatsAppNumber}?text=${message}`;
-
-            // Open WhatsApp with data
-            window.open(whatsappURL, '_blank');
             closeOrderModal();
+            document.getElementById('successMessage').classList.remove('hidden');
+            document.getElementById('orderForm').reset();
         }
 
-        // Close modal when clicked outside
-        window.onclick = function(event) {
-            let modal = document.getElementById('orderModal');
-            if (event.target == modal) {
-                closeOrderModal();
-            }
+        function closeSuccessModal() {
+            document.getElementById('successMessage').classList.add('hidden');
         }
     </script>
 </body>
-    </html>
+</html>
