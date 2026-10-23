@@ -3,84 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গ্রাম বাংলার বাজার - অনলাইন শপিং</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>ইকোনমিক্স স্টোর - পণ্য ও প্যাকেজ</title>
     <style>
+        :root {
+            --primary-color: #1b365d;
+            --secondary-color: #27ae60;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body {
-            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* ডানে-বামে মিস করার স্লাইডার (Left-Right Slider) */
+        .slider-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .package-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0.5rem;
+            width: 100%;
+            scrollbar-width: none;
+        }
+
+        .package-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card {
+            flex: 0 0 240px;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .price {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .nav-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .prev-btn { left: -15px; }
+        .next-btn { right: -15px; }
+
+        /* অর্ডার ও কন্টাক্ট ফরম */
+        .order-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .order-section { grid-template-columns: 1fr; }
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 3rem;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Top Bar -->
-    <div class="bg-blue-600 text-white text-sm py-2 px-4 text-center">
-        <span>🎉 ফ্রি হোম ডেলিভারি অফার চলছে! হটলাইন: <strong class="underline">+8801309176474</strong></span>
-    </div>
-
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl">🛒</span>
-                <span class="text-2xl font-bold text-blue-600">গ্রাম বাংলার বাজার</span>
-            </div>
-            <nav class="hidden md:flex space-x-6 font-medium">
-                <a href="#" class="hover:text-blue-600 transition">হোম</a>
-                <a href="#products" class="hover:text-blue-600 transition">পণ্যসমূহ</a>
-                <a href="#about" class="hover:text-blue-600 transition">আমাদের সম্পর্কে</a>
-                <a href="#contact" class="hover:text-blue-600 transition">যোগাযোগ</a>
-            </nav>
-            <div>
-                <a href="#products" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium shadow hover:bg-blue-700 transition">অর্ডার করুন</a>
-            </div>
-        </div>
+    <header>
+        <h1>ইকোনমিক্স স্টোর (Economics Store)</h1>
+        <p>আপনার পছন্দের সেরা প্যাকেজটি বেছে নিন</p>
     </header>
 
-    <!-- Main Large Banner Section -->
-    <section class="bg-gray-100 py-4 px-2 md:px-4">
-        <div class="container mx-auto max-w-6xl">
-            <div class="overflow-hidden rounded-2xl shadow-xl border border-gray-200">
-                <!-- ব্যানার ছবির নাম পরিবর্তন করার জায়গা -->
-                <img src="file_00000000972482089649e190c912a281.png" alt="গ্রাম বাংলার বাজার ব্যানার" class="w-full h-auto object-cover block">
+    <div class="container">
+        <h2 class="section-title">আমাদের বিশেষ কেজি প্যাকেজসমূহ</h2>
+
+        <!-- ডানে বামে স্ক্রোল করার স্লাইডার -->
+        <div class="slider-container">
+            <button class="nav-btn prev-btn" onclick="slideLeft()">&#10094;</button>
+            
+            <div class="package-wrapper" id="packageWrapper">
+                <div class="card">
+                    <h3>১ কেজি প্যাকেট</h3>
+                    <div class="price">৳ ৫০০</div>
+                    <button class="btn" onclick="selectPkg('১ কেজি প্যাকেট')">অর্ডার করুন</button>
+                </div>
+                <div class="card">
+                    <h3>২ কেজি প্যাকেট</h3>
+                    <div class="price">৳ ৯৫০</div>
+                    <button class="btn" onclick="selectPkg('২ কেজি প্যাকেট')">অর্ডার করুন</button>
+                </div>
+                <div class="card">
+                    <h3>৩ কেজি প্যাকেট</h3>
+                    <div class="price">৳ ১,৪০০</div>
+                    <button class="btn" onclick="selectPkg('৩ কেজি প্যাকেট')">অর্ডার করুন</button>
+                </div>
+                <div class="card">
+                    <h3>৪ কেজি প্যাকেট</h3>
+                    <div class="price">৳ ১,৮০০</div>
+                    <button class="btn" onclick="selectPkg('৪ কেজি প্যাকেট')">অর্ডার করুন</button>
+                </div>
+            </div>
+
+            <button class="nav-btn next-btn" onclick="slideRight()">&#10095;</button>
+        </div>
+
+        <!-- অর্ডার ও যোগাযোগের সেকশন -->
+        <div class="order-section">
+            <div>
+                <h3>অর্ডার ফরম</h3>
+                <form onsubmit="submitOrder(event)">
+                    <div class="form-group">
+                        <label>আপনার নাম</label>
+                        <input type="text" required placeholder="নাম লিখুন">
+                    </div>
+                    <div class="form-group">
+                        <label>ফোন নম্বর</label>
+                        <input type="tel" required placeholder="০১XXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>বাছাইকৃত প্যাকেজ</label>
+                        <input type="text" id="selectedPackage" readonly value="প্যাকেজ নির্বাচন করুন">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">অর্ডার কনফার্ম করুন</button>
+                </form>
+            </div>
+
+            <div>
+                <h3>যোগাযোগের মাধ্যম</h3>
+                <p><strong>📞 ফোন নম্বর:</strong> +৮৮০ ১৭০০-০০০০০০</p>
+                <p><strong>✉️ ইমেইল:</strong> info@economicsstore.com</p>
+                <p><strong>📍 ঠিকানা:</strong> ঢাকা, বাংলাদেশ</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Products Section -->
-    <section id="products" class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-2 text-gray-800">আমাদের জনপ্রিয় পণ্যসমূহ</h2>
-        <p class="text-gray-500 text-center mb-10 text-base">আপনার পছন্দের পণ্যটি বেছে নিন এবং অর্ডার করুন</p>
+    <footer>
+        <p>&copy; ২০২৬ ইকোনমিক্স স্টোর। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Product 1 -->
-            <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between">
-                <div class="w-full bg-gray-50 p-4 flex justify-center">
-                    <img src="IMG-20261008-WA0001.jpg" alt="কাঁঠালের বিচির চিপস" class="w-full h-auto block">
-                </div>
-                <div class="p-5 border-t border-gray-100">
-                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
-                    <h3 class="text-xl font-bold mt-2">কাঁঠালের বিচির চিপস</h3>
-                    <p class="text-gray-600 text-sm mt-1">প্রকৃতির সুস্বাদে গ্রামের স্বাদ, ১০০% প্রাকৃতিক ও স্বাস্থ্যকর চিপস।</p>
-                    <div class="flex justify-between items-center mt-4">
-                        <span class="text-xl font-bold text-blue-600">১৯০ টাকা</span>
-                        <button onclick="openOrderModal('কাঁঠালের বিচির চিপস', '১৯০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
-                    </div>
-                </div>
-            </div>
+    <script>
+        const wrapper = document.getElementById('packageWrapper');
 
-            <!-- Product 2 -->
-            <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between">
-                <div class="w-full bg-gray-50 p-4 flex justify-center">
-                    <img src="file_000000003534820892482020ef93e8a2.png" alt="খেজুরের বীজের কফি" class="w-full h-auto block">
-                </div>
-                <div class="p-5 border-t border-gray-100">
-                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
-                    <h3 class="text-xl font-bold mt-2">খেজুরের বীজের কফি</h3>
-                    <p class="text-gray-600 text-sm mt-1">অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ ও প্রাকৃতিক শক্তিবর্ধক প্রিমিয়াম কোয়ালিটি কফি।</p>
-                    <div class="flex justify-between items-center mt-4">
-                        <span class="text-xl font-bold text-blue-600">১৫০ টাকা</span>
-                        <button onclick="openOrderModal('খেজুরের বীজের কফি', '১৫০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
-                    <
+        function slideLeft() {
+            wrapper.scrollBy({ left: -250, behavior: 'smooth' });
+        }
+
+        function slideRight() {
+            wrapper.scrollBy({ left: 250, behavior: 'smooth' });
+        }
+
+        function selectPkg(name) {
+            document.getElementById('selectedPackage').value = name;
+            alert(name + " সিলেক্ট করা হয়েছে!");
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            alert("আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে!");
+        }
+    </script>
+</body>
+</html>
