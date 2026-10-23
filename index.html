@@ -3,178 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>প্রকৃতি ফুডস | স্বাস্থ্যকর ও খাঁটি খাবার</title>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>গ্রাম বাংলার বাজার - অনলাইন শপিং</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Hind Siliguri', 'Kalpurush', sans-serif, Arial;
-        }
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Hind Siliguri', sans-serif;
         }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
 
-        /* Header & Navigation */
-        header {
-            background-color: #1b4332;
-            color: white;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: #2d6a4f;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: #d8f3dc;
-            border: 2px solid #52b788;
-        }
-        .brand-name h1 {
-            font-size: 22px;
-            color: #ffffff;
-            line-height: 1.2;
-        }
-        .brand-name span {
-            font-size: 12px;
-            color: #b7e4c7;
-        }
+    <!-- Top Bar -->
+    <div class="bg-blue-600 text-white text-sm py-2 px-4 text-center">
+        <span>🎉 ফ্রি হোম ডেলিভারি অফার চলছে! হটলাইন: <strong class="underline">+8801309176474</strong></span>
+    </div>
 
-        /* Banner */
-        .hero-banner {
-            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(45, 106, 79, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000') center/cover;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .hero-banner h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">🛒</span>
+                <span class="text-2xl font-bold text-blue-600">গ্রাম বাংলার বাজার</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#" class="hover:text-blue-600 transition">হোম</a>
+                <a href="#products" class="hover:text-blue-600 transition">পণ্যসমূহ</a>
+                <a href="#about" class="hover:text-blue-600 transition">আমাদের সম্পর্কে</a>
+                <a href="#contact" class="hover:text-blue-600 transition">যোগাযোগ</a>
+            </nav>
+            <div>
+                <a href="#products" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium shadow hover:bg-blue-700 transition">অর্ডার করুন</a>
+            </div>
+        </div>
+    </header>
 
-        /* Section Title */
-        .section-title {
-            text-align: center;
-            margin: 30px 0 20px;
-            font-size: 24px;
-            color: #1b4332;
-        }
+    <!-- Main Large Banner Section -->
+    <section class="bg-gray-100 py-4 px-2 md:px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="overflow-hidden rounded-2xl shadow-xl border border-gray-200">
+                <!-- ব্যানার ছবির নাম পরিবর্তন করার জায়গা -->
+                <img src="file_00000000972482089649e190c912a281.png" alt="গ্রাম বাংলার বাজার ব্যানার" class="w-full h-auto object-cover block">
+            </div>
+        </div>
+    </section>
 
-        /* Products Container */
-        .products-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px 40px;
-        }
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-2 text-gray-800">আমাদের জনপ্রিয় পণ্যসমূহ</h2>
+        <p class="text-gray-500 text-center mb-10 text-base">আপনার পছন্দের পণ্যটি বেছে নিন এবং অর্ডার করুন</p>
 
-        /* Main Product Card */
-        .product-section {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between">
+                <div class="w-full bg-gray-50 p-4 flex justify-center">
+                    <img src="IMG-20261008-WA0001.jpg" alt="কাঁঠালের বিচির চিপস" class="w-full h-auto block">
+                </div>
+                <div class="p-5 border-t border-gray-100">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">কাঁঠালের বিচির চিপস</h3>
+                    <p class="text-gray-600 text-sm mt-1">প্রকৃতির সুস্বাদে গ্রামের স্বাদ, ১০০% প্রাকৃতিক ও স্বাস্থ্যকর চিপস।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">১৯০ টাকা</span>
+                        <button onclick="openOrderModal('কাঁঠালের বিচির চিপস', '১৯০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    </div>
+                </div>
+            </div>
 
-        .featured-product {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-            border-bottom: 2px border-dash #eee;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        .featured-img {
-            width: 100%;
-            max-width: 280px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 0 auto;
-        }
-        .featured-details {
-            flex: 1;
-            min-width: 280px;
-        }
-        .featured-details h3 {
-            font-size: 22px;
-            color: #2d6a4f;
-            margin-bottom: 8px;
-        }
-        .featured-details p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 12px;
-        }
-        .badge {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 4px 10px;
-            font-size: 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        /* Horizontal Scroll Carousel for Variants */
-        .variant-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 12px;
-        }
-        .scroll-container {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-            scrollbar-width: thin;
-            scrollbar-color: #52b788 #e0e0e0;
-        }
-        .scroll-container::-webkit-scrollbar {
-            height: 6px;
-        }
-        .scroll-container::-webkit-scrollbar-thumb {
-            background-color: #52b788;
-            border-radius: 10px;
-        }
-
-        /* Variant Card */
-        .variant-card {
-            min-width: 160px;
-            background: #f8f9fa;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 12px;
-            text-align: center;
-            flex-shrink: 0;
-            transition: 0.3s;
-        }
-        .variant-card:hover {
-            border-color: #52b788;
-            transform: translateY(-3px);
-        }
-        .variant-card img {
-            width: 100px;
-            h
+            <!-- Product 2 -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between">
+                <div class="w-full bg-gray-50 p-4 flex justify-center">
+                    <img src="file_000000003534820892482020ef93e8a2.png" alt="খেজুরের বীজের কফি" class="w-full h-auto block">
+                </div>
+                <div class="p-5 border-t border-gray-100">
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">স্টকে আছে</span>
+                    <h3 class="text-xl font-bold mt-2">খেজুরের বীজের কফি</h3>
+                    <p class="text-gray-600 text-sm mt-1">অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ ও প্রাকৃতিক শক্তিবর্ধক প্রিমিয়াম কোয়ালিটি কফি।</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-blue-600">১৫০ টাকা</span>
+                        <button onclick="openOrderModal('খেজুরের বীজের কফি', '১৫০')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">অর্ডার করুন</button>
+                    <
