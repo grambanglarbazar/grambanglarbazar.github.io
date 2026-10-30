@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="গ্রাম বাংলার বাজারের খেজুরের বীজের কফি। প্যাকেটের সাইজ বেছে WhatsApp-এ অর্ডার করুন।">
+  <title>খেজুরের বীজের কফি | গ্রাম বাংলার বাজার</title>
+  <style>
+    :root {
+      --green: #174d35;
+      --green-2: #286747;
+      --cream: #fbf8ef;
+      --gold: #d5a84c;
+      --ink: #243329;
+      --muted: #66736a;
+      --line: #e7e5dc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Noto Sans Bengali", "Nirmala UI", sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .topbar {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand {
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 19px;
+    }
+    .back {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 14px;
+    }
+    main { max-width: 1100px; margin: auto; padding: 34px 20px 60px; }
+    .crumb { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+    .product {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 42px;
+      align-items: start;
+    }
+    .gallery-main {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+    }
+    .gallery-main img {
+      width: 100%;
+      height: 420px;
+      object-fit: contain;
+      display: block;
+      padding: 14px;
+    }
+    .thumbs { display: flex; gap: 10px; margin-top: 12px; }
+    .thumb {
+      width: 82px; height: 82px; padding: 4px;
+      border: 1px solid var(--line); border-radius: 12px;
+      background: var(--cream); cursor: pointer; overflow: hidden;
+    }
+    .thumb.active { border: 2px solid var(--green-2); }
+    .thumb img { width: 100%; height: 100%; object-fit: contain; }
+    .eyebrow {
+      color: var(--green-2); font-size: 13px; font-weight: 750;
+      letter-spacing: .04em; margin: 0 0 8px;
+    }
+    h1 { color: var(--green); font-size: clamp(27px, 4vw, 39px); line-height: 1.25; margin: 0 0 12px; }
+    .intro { color: var(--muted); margin: 0 0 20px; }
+    .price-line { display: flex; align-items: baseline; gap: 8px; margin: 18px 0; }
+    .price { color: var(--green); font-size: 30px; font-weight: 850; }
+    .unit { color: var(--muted); font-size: 14px; }
+    .panel {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px;
+      padding: 18px; margin: 18px 0;
+    }
+    .field-label { display: block; font-weight: 750; margin-bottom: 9px; }
+    select, input {
+      width: 100%; padding: 13px 12px; border: 1px solid #d8ded8;
+      border-radius: 10px; font: inherit; background: #fff; color: var(--ink);
+    }
+    .qty-row { display: flex; align-items: center; gap: 12px; margin-top: 15px; }
+    .qty-row input { max-width: 105px; }
+    .total { margin-left: auto; font-weight: 800; color: var(--green); }
+    .btn {
+      display: block; width: 100%; border: 0; border-radius: 12px;
+      padding: 15px 18px; background: var(--green); color: #fff;
+      font: inherit; font-weight: 800; text-align: center; text-decoration: none;
+      cursor: pointer; margin-top: 15px;
+    }
+    .btn:hover { background: var(--green-2); }
+    .small-note { color: var(--muted); font-size: 12px; margin: 10px 0 0; }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 42px; }
+    .info-card {
+      background: var(--cream); border: 1px solid var(--line);
+      border-radius: 16px; padding: 22px;
+    }
+    h2 { color: var(--green); font-size: 22px; margin: 0 0 12px; }
+    .info-card p, .info-card li { color: #4f5e54; }
+    footer { background: #123d2b; color: #edf5ee; padding: 28px 20px; }
+    .footer-inner {
+      max-width: 1100px; margin: auto; display: flex;
+      justify-content: space-between; gap: 18px; flex-wrap: wrap;
+    }
+    footer a { color: #fff; }
+    .copyright { color: #c8d7cd; font-size: 13px; width: 100%; border-top: 1px solid #426451; padding-top: 14px; margin-top: 8px; }
+    @media (max-width: 760px) {
+      main { padding: 22px 15px 42px; }
+      .product { grid-template-columns: 1fr; gap: 24px; }
+      .gallery-main { min-height: 300px; }
+      .gallery-main img { height: 300px; }
+      .details { grid-template-columns: 1fr; margin-top: 28px; }
+      .nav { padding: 13px 15px; }
+      .brand { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">গ্রাম বাংলার বাজার | MADE IN BANGLADESH 🇧🇩</div>
+
+  <header>
+    <nav class="nav">
+      <a class="brand" href="index.html">🌿 গ্রাম বাংলার বাজার</a>
+      <a class="back" href="index.html">← সব পণ্য দেখুন</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="crumb">হোম / পণ্যসমূহ / খেজুরের বীজের কফি</div>
+
+    <section class="product">
+      <div>
+        <div class="gallery-main">
+          <!-- নিচের ছবির ফাইলের নাম images ফোল্ডারে রাখা ছবির নামের সঙ্গে মিলিয়ে দিন -->
+          <img id="mainImage" src="images/date-seed-coffee-front.jpg"
+               alt="গ্রাম বাংলার বাজারের খেজুরের বীজের কফির প্যাকেট"
+               onerror="this.alt='এখানে কফির সামনের ছবিটি দেখানো হবে'; this.style.minHeight='260px';">
+        </div>
+        <div class="thumbs" aria-label="পণ্যের ছবির গ্যালারি">
+          <button class="thumb active" type="button" onclick="changePhoto('images/date-seed-coffee-front.jpg', this)" aria-label="সামনের ছবি">
+            <img src="images/date-seed-coffee-front.jpg" alt="কফির সামনের ছবি">
+          </button>
+          <button class="thumb" type="button" onclick="changePhoto('images/date-seed-coffee-back.jpg', this)" aria-label="পেছনের ছবি">
+            <img src="images/date-seed-coffee-back.jpg" alt="কফির পেছনের ছবি">
+          </button>
+          <button class="thumb" type="button" onclick="changePhoto('images/date-seed-coffee-detail.jpg', this)" aria-label="পণ্যের বিস্তারিত ছবি">
+            <img src="images/date-seed-coffee-detail.jpg" alt="কফির বিস্তারিত ছবি">
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow">গ্রাম বাংলার বাজারের নিজস্ব পণ্য</p>
+        <h1>খেজুরের বীজের কফি</h1>
+        <p class="intro">খেজুরের বীজ পরিষ্কার, প্রক্রিয়াজাত, শুকানো ও গুঁড়া করে তৈরি একটি স্বতন্ত্র পানীয় উপাদান। প্রতিদিনের পানীয়তে নতুন স্বাদের অভিজ্ঞতা নিতে বেছে নিন আপনার পছন্দের প্যাকেট।</p>
+
+        <div class="price-line">
+          <span class="price" id="price">৳১১০</span>
+          <span class="unit" id="weightLabel">/ ৭৫ গ্রাম</span>
+        </div>
+
+        <div class="panel">
+          <label class="field-label" for="size">প্যাকেটের সাইজ নির্বাচন করুন</label>
+          <select id="size" onchange="updatePrice()">
+            <option value="75" data-price="110">৭৫ গ্রাম — ৳১১০</option>
+            <option value="150" data-price="290">১৫০ গ্রাম — ৳২৯০</option>
+            <option value="250" data-price="480">২৫০ গ্রাম — ৳৪৮০</option>
+            <option value="500" data-price="950">৫০০ গ্রাম — ৳৯৫০</option>
+          </select>
+
+          <div class="qty-row">
+            <div>
+              <label class="field-label" for="quantity">পরিমাণ</label>
+              <input id="quantity" type="number" min="1" max="99" value="1" oninput="updatePrice()">
+            </div>
+            <div class="total">মোট: <span id="total">৳১১০</span></div>
+          </div>
+          <button class="btn" type="button" onclick="orderOnWhatsApp()">WhatsApp-এ অর্ডার করুন</button>
+          <p class="small-note">অর্ডার সম্পন্ন করতে WhatsApp খুলবে। সেখানে আপনার নাম ও ডেলিভারি ঠিকানা লিখে মেসেজ পাঠাবেন।</p>
+        </div>
+
+        <p><strong>উপাদান:</strong> খেজুরের বীজ।</p>
+        <p><strong>প্রস্তুতকারক ও বাজারজাতকারী:</strong> গ্রাম বাংলার বাজার, পুঠিয়া, রাজশাহী, বাংলাদেশ।</p>
+      </div>
+    </section>
+
+    <section class="details">
+      <article class="info-card">
+        <h2>পণ্যের পরিচিতি</h2>
+        <p>খেজুরের বীজ বাছাই ও পরিষ্কার করে নিরাপদ প্রক্রিয়ায় প্রস্তুত করা হয়। পণ্যের স্বাদ ও মান বজায় রাখতে পরিষ্কার-পরিচ্ছন্নতা এবং সঠিকভাবে শুকানোর দিকে গুরুত্ব দেওয়া হয়।</p>
+        <p>এটি খেজুরের বীজ দিয়ে তৈরি পানীয় উপাদান। এটি সাধারণ কফি বিন দিয়ে তৈরি নয়।</p>
+      </article>
+
+      <article class="info-card">
+        <h2>আমাদের উৎপাদন প্রক্রিয়া</h2>
+        <ol>
+          <li>খেজুরের বীজ বাছাই ও পরিষ্কার করা।</li>
+          <li>গরম পানিতে সিদ্ধ করে পরিষ্কার প্রক্রিয়া সম্পন্ন করা।</li>
+          <li>নিরাপদভাবে শুকানো ও ভাজা।</li>
+          <li>প্রয়োজন অনুযায়ী গুঁড়া করা।</li>
+          <li>পরিষ্কার প্যাকেটে প্যাকেটজাত করা।</li>
+        </ol>
+      </article>
+
+      <article class="info-card">
+        <h2>কেন গ্রাম বাংলার বাজার?</h2>
+        <ul>
+          <li>দেশীয় উপাদানকে গুরুত্ব দিই।</li>
+          <li>পরিষ্কার-পরিচ্ছন্ন প্রক্রিয়ায় পণ্য প্রস্তুতের চেষ্টা করি।</li>
+          <li>গ্রাহকের মতামত ও সন্তুষ্টিকে গুরুত্ব দিই।</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>অর্ডার ও যোগাযোগ</h2>
+        <p>WhatsApp: <a href="https://wa.me/8801309176474">+8801309176474</a></p>
+        <p>ইমেইল: grambanglarbazar.business@gmail.com</p>
+        <p>ঠিকানা: পুঠিয়া, রাজশাহী, বাংলাদেশ।</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><strong>🌿 গ্রাম বাংলার বাজার</strong><br>দেশের মাটি থেকে, আপনার ঘরে।</div>
+      <div>
+        <a href="index.html">হোম</a> ·
+        <a href="https://www.facebook.com/share/1ESbvX3UQo/">Facebook</a> ·
+        <a href="https://wa.me/8801309176474">WhatsApp</a>
+      </div>
+      <div class="copyright">© ২০২৬ গ্রাম বাংলার বাজার। সর্বস্বত্ব সংরক্ষিত। | MADE IN BANGLADESH 🇧🇩</div>
+    </div>
+  </footer>
+
+  <script>
+    const taka = number => '৳' + Number(number).toLocaleString('bn-BD');
+
+    function updatePrice() {
+      const select = document.getElementById('size');
+      const option = select.options[select.selectedIndex];
+      const price = Number(option.dataset.price);
+      const weight = Number(option.value);
+      const quantityInput = document.getElementById('quantity');
+      const quantity = Math.max(1, Math.min(99, Number(quantityInput.value) || 1));
+      quantityInput.value = quantity;
+
+      document.getElementById('price').textContent = taka(price);
+      document.getElementById('weightLabel').textContent = '/ ' + weight.toLocaleString('bn-BD') + ' গ্রাম';
+      document.getElementById('total').textContent = taka(price * quantity);
+    }
+
+    function changePhoto(src, button) {
+      document.getElementById('mainImage').src = src;
+      document.querySelectorAll('.thumb').forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+    }
+
+    function orderOnWhatsApp() {
+      const select = document.getElementById('size');
+      const option = select.options[select.selectedIndex];
+      const weight = Number(option.value);
+      const price = Number(option.dataset.price);
+      const quantity = Math.max(1, Number(document.getElementById('quantity').value) || 1);
+      const total = price * quantity;
+
+      const message =
+        'আসসালামু আলাইকুম, আমি গ্রাম বাংলার বাজার থেকে অর্ডার করতে চাই।%0A%0A' +
+        'পণ্য: খেজুরের বীজের কফি%0A' +
+        'সাইজ: ' + weight + ' গ্রাম%0A' +
+        'পরিমাণ: ' + quantity + ' প্যাকেট%0A' +
+        'পণ্যের মোট মূল্য: ' + total + ' টাকা%0A%0A' +
+        'আমার নাম ও ডেলিভারি ঠিকানা:';
+
+      window.open('https://wa.me/8801309176474?text=' + encodeURIComponent(decodeURIComponent(message)), '_blank');
+    }
+    updatePrice();
+  </script>
+</body>
+</html>
